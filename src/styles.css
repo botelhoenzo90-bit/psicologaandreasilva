@@ -197,3 +197,79 @@ footer{background:var(--footer-surface);color:var(--footer-text);padding:44px 0 
 /* Logomarca da primeira sessão também no rodapé */
 .site .footer-logo { width: min(165px, 100%); max-height: 100px; object-position: left center; object-fit: contain; margin: 0 0 16px; }
 @media(max-width:700px) { .site .footer-logo { width: 150px; margin-inline: 0; } }
+
+
+/* Identidade visual — Andréa Silva Psicóloga */
+.andreia-site {
+  --background: #f2f1ef;
+  --foreground: #262522;
+  --primary: #292826;
+  --primary-foreground: #fbf8f1;
+  --secondary: #e7e5e1;
+  --secondary-foreground: #292826;
+  --muted: #e9e7e3;
+  --muted-foreground: #65615a;
+  --accent: #c5a15b;
+  --accent-foreground: #211d16;
+  --border: #d4d0c9;
+  --paper: #f8f7f4;
+  --ink: #292826;
+  --sage: #c5a15b;
+  --sage-dark: #292826;
+  --soft: #e9e7e3;
+  --warm: #ded6c9;
+  --hero-surface: #242321;
+  --hero-text: #f7f4ee;
+  --hero-muted: #d4c6a8;
+  --footer-surface: #201f1d;
+  --footer-text: #f7f4ee;
+  color: #292826;
+}
+.andreia-site .hero { background: radial-gradient(ellipse at 80% 20%, #49443a 0%, #292826 44%, #1d1c1a 100%); }
+.andreia-site .hero h1, .andreia-site .hero h2, .andreia-site .hero p { color: #f7f4ee; }
+.andreia-site .hero h1 em, .andreia-site h2 em { color: #c5a15b; }
+.andrea-wordmark { display: inline-flex; align-items: center; gap: 15px; color: #d3b36e; margin: 0 0 28px; }
+.andrea-wordmark > span:last-child { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.25rem, 2vw, 1.7rem); letter-spacing: .12em; line-height: 1.25; }
+.andrea-wordmark small { display: block; margin-top: 7px; font: 500 .68rem/1.4 Arial, sans-serif; letter-spacing: .2em; color: #eee8dc; }
+.wordmark-symbol { width: 52px; height: 52px; display: grid; place-items: center; border: 1px solid #c5a15b; border-radius: 50%; font-family: Georgia, serif; font-size: 2rem; }
+.andreia-site .eyebrow { color: #a17c36; letter-spacing: .17em; }
+.andreia-site .hero .eyebrow { color: #d8bd7f; }
+.andreia-site .hero .hero-credentials span { color: #f0e9dc; }
+.andreia-site .hero .hero-note { color: #d7c9ae; font-size: .9rem; margin-top: 18px; }
+.andreia-site .section { background-color: #f3f2ef; }
+.andreia-site .section.soft { background: #e5e3df; }
+.andreia-site .section.clinic-story, .andreia-site .section.specialty { background: #ded7cb; }
+.andreia-site .section.about { background: #f8f7f4; }
+.andreia-site .issue-card, .andreia-site .step, .andreia-site .clinic-highlight-card, .andreia-site .method-cards article, .andreia-site .review-card, .andreia-site .location-card, .andreia-site .faq-item { border-color: #d1c9bb; }
+.andreia-site .issue-symbol { display: grid; place-items: center; background: linear-gradient(145deg,#34322e,#1f1e1c); color: #d7b76e; }
+.andreia-site .issue-symbol span { font-family: Georgia,serif; font-size: 3rem; }
+.andreia-site .method-icon, .andreia-site .clinic-highlight-icon, .andreia-site .location-card-icon, .andreia-site .review-avatar { color: #a17c36; background: #eee6d8; }
+.andreia-site .step-num { color: #a17c36; }
+.andreia-site .specialty-quote { background: #292826; color: #f8f4eb; border: 1px solid #c5a15b; }
+.andreia-site .specialty-quote p { color: #f8f4eb; }
+.andreia-site .final-cta { background: linear-gradient(135deg,#292826,#403a30); }
+.andreia-site .final-cta h2, .andreia-site .final-cta p { color: #f8f4eb; }
+.andreia-site .final-cta h2 em { color: #d4b46d; }
+.andreia-site footer { background: #201f1d; color: #f4efe6; }
+.andreia-site footer p, .andreia-site footer span, .andreia-site footer a { color: #e0d8ca; }
+.andreia-site .footer-wordmark { margin-bottom: 14px; }
+.andreia-site .about-photo-placeholder { background: linear-gradient(145deg,#34322e,#1f1e1c); border: 1px solid #c5a15b; color: #d4b46d; }
+.andreia-site .about-placeholder-content span { color: #e3d9c8; }
+.andreia-site .video-grid { display: grid; grid-template-columns: 1fr 1.05fr; gap: clamp(28px,5vw,72px); align-items: center; }
+.andreia-site .video-section { background: #e9e7e3; }
+.andreia-site .clinic-video-frame { min-height: 320px; aspect-ratio: 16 / 9; border-radius: 18px; overflow: hidden; background: #292826; border: 1px solid #c5a15b; box-shadow: 0 16px 45px #29282620; }
+.andreia-site .clinic-video-frame iframe { width: 100%; height: 100%; min-height: 320px; border: 0; display: block; }
+.andreia-site .video-placeholder { height: 100%; min-height: 320px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 30px; color: #f8f4eb; background: radial-gradient(circle at center,#454037,#242321 70%); }
+.andreia-site .video-placeholder strong { margin-top: 16px; font-size: 1.15rem; color: #d4b46d; }
+.andreia-site .video-placeholder p { color: #ded6c9; margin-top: 8px; }
+.andreia-site .video-play { width: 70px; height: 70px; border: 1px solid #c5a15b; color: #d4b46d; border-radius: 50%; display: grid; place-items: center; }
+.andreia-site .btn-siteGold, .andreia-site button[data-variant="siteGold"] { background: linear-gradient(135deg,#d6b86f,#b58a3f) !important; color: #211d16 !important; border: 1px solid #e2c77f !important; box-shadow: 0 7px 20px #9b783b2e; font-weight: 700; }
+.andreia-site .btn-siteGold:hover, .andreia-site button[data-variant="siteGold"]:hover { background: linear-gradient(135deg,#e4ca88,#c49a4e) !important; transform: translateY(-1px); }
+.andreia-site .faq-item .faq-item, .andreia-site .faq-list p { color: #393630; }
+@media (max-width: 760px) {
+  .andreia-site .video-grid { grid-template-columns: 1fr; }
+  .andrea-wordmark { gap: 10px; }
+  .wordmark-symbol { width: 44px; height: 44px; font-size: 1.7rem; }
+  .andrea-wordmark > span:last-child { font-size: 1.15rem; }
+  .andrea-wordmark small { font-size: .58rem; letter-spacing: .12em; }
+}
