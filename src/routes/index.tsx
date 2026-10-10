@@ -60,7 +60,7 @@ function Index() {
       <section className="hero" id="inicio">
         <div className="container hero-grid"><div className="hero-copy">
           <img className="brand-logo-image" src="/Emblema%20Dourado%20de%20Psicologia%20e%20Crescimento.png" alt="Logo de Andréa Silva" onError={(event) => { event.currentTarget.style.display = "none"; }} />
-          <span className="eyebrow">PSICOLOGIA • RIO FORMOSO E ONLINE</span>
+          <span className="eyebrow">PSICÓLOGA • RIO FORMOSO • PRESENCIAL E ONLINE</span>
           <h1>Um espaço para <em>cuidar de você.</em></h1>
           <p className="hero-lead">Escuta acolhedora para compreender emoções, respeitar sua história e olhar para si com mais cuidado.</p>
           <div className="hero-actions hero-actions-centered"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de informações sobre o atendimento psicológico.")}><MessageCircle/> Agendar atendimento</Button></div>
@@ -79,7 +79,7 @@ function Index() {
 
       <section className="section soft" id="possibilidades"><div className="container issues-container">
         <div className="section-heading center"><span className="eyebrow">O QUE PODEMOS CONVERSAR</span><h2>Um espaço para olhar com cuidado para <em>o que você está vivendo.</em></h2><p>Cada história é única. Estes são alguns temas que podem aparecer na busca por acompanhamento psicológico.</p></div>
-        <div className="issue-window"><div className="issue-track"><div className="conveyor-group">{concerns.map(([title, desc], i) => <article className="issue-card" key={title}><div className="issue-body"><span className="issue-icon" aria-hidden="true">{[<Brain size={25}/>, <Sparkles size={25}/>, <HeartHandshake size={25}/>, <Heart size={25}/>, <Compass size={25}/>, <Lightbulb size={25}/>][i]}</span><h3>{title}</h3><p>{desc}</p></div></article>)}</div><div className="conveyor-group" aria-hidden="true">{concerns.map(([title, desc], i) => <article className="issue-card" key={title}><div className="issue-body"><h3>{title}</h3><p>{desc}</p></div></article>)}</div></div></div>
+        <div className="issue-window"><div className="issue-track"><div className="conveyor-group">{concerns.map(([title, desc], i) => <article className="issue-card" key={title}><div className="issue-body"><span className="issue-icon" aria-hidden="true">{[<Brain size={25}/>, <Sparkles size={25}/>, <HeartHandshake size={25}/>, <Heart size={25}/>, <Compass size={25}/>, <Lightbulb size={25}/>][i]}</span><h3>{title}</h3><p>{desc}</p></div></article>)}</div><div className="conveyor-group" aria-hidden="true">{concerns.map(([title, desc], i) => <article className="issue-card" key={title}><div className="issue-body"><span className="issue-icon" aria-hidden="true">{[<Brain size={25}/>, <Sparkles size={25}/>, <HeartHandshake size={25}/>, <Heart size={25}/>, <Compass size={25}/>, <Lightbulb size={25}/>][i]}</span><h3>{title}</h3><p>{desc}</p></div></article>)}</div></div></div>
         <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de conversar sobre atendimento psicológico.")}>Vamos conversar <MessageCircle size={18}/></Button></div>
       </div></section>
 
@@ -122,6 +122,12 @@ function Index() {
         <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de iniciar uma conversa sobre atendimento psicológico.")}>Dar o primeiro passo <ArrowRight size={18}/></Button></div>
       </div></section>
 
+      <section className="section video-section" id="consultorio"><div className="container video-grid">
+        <div className="video-copy"><span className="eyebrow">CONHEÇA O ESPAÇO</span><h2>Um ambiente pensado para receber você com <em>tranquilidade.</em></h2><p>Veja um pouco do consultório e conheça o espaço onde acontecem os atendimentos presenciais.</p></div>
+        <div className="clinic-video-frame vertical-video"><video controls playsInline preload="metadata" poster="/Emblema%20Dourado%20de%20Psicologia%20e%20Crescimento.png" aria-label="Vídeo do consultório de Andréa Silva"><source src={clinicVideoUrl} type="video/mp4" />Seu navegador não consegue reproduzir este vídeo. Verifique se o arquivo MP4 está disponível em public.</video></div>
+        <div className="video-cta"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o consultório e o atendimento presencial.")}>Informações sobre o consultório <ArrowRight size={18}/></Button></div>
+      </div></section>
+
       <section className="section reviews" id="avaliacoes"><div className="container reviews-container">
         <div className="section-heading center"><span className="eyebrow">AVALIAÇÕES E DEPOIMENTOS</span><h2>Um olhar sobre o cuidado e a <em>experiência terapêutica.</em></h2><p>Conheça relatos sobre a importância de ter um espaço de escuta, acolhimento e autoconhecimento.</p></div>
         <div className="review-window" aria-label="Carrossel ilustrativo de depoimentos"><div className="review-track">
@@ -139,12 +145,7 @@ function Index() {
         <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o atendimento psicológico.")}>Conversar com Andréa <MessageCircle size={18}/></Button></div>
       </div></section>
 
-      <section className="section video-section" id="consultorio"><div className="container video-grid">
-        <div className="video-copy"><span className="eyebrow">CONHEÇA O ESPAÇO</span><h2>Um ambiente pensado para receber você com <em>tranquilidade.</em></h2><p>Veja um pouco do consultório e conheça o espaço onde acontecem os atendimentos presenciais.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o consultório e o atendimento presencial.")}>Informações sobre o consultório <ArrowRight size={18}/></Button></div>
-        <div className="clinic-video-frame vertical-video"><video controls playsInline preload="auto" poster="/Emblema%20Dourado%20de%20Psicologia%20e%20Crescimento.png" aria-label="Vídeo do consultório de Andréa Silva"><source src={clinicVideoUrl} type="video/mp4" />Seu navegador não consegue reproduzir este vídeo. Verifique se o arquivo MP4 está disponível em public.</video></div>
-      </div></section>
-
-      <section className="section location" id="localizacao"><div className="container location-grid">
+            <section className="section location" id="localizacao"><div className="container location-grid">
         <figure className="location-map"><iframe title="Mapa do endereço de atendimento em Rio Formoso" src={clinicMapUrl} loading="lazy" allowFullScreen referrerPolicy="strict-origin-when-cross-origin"/></figure>
         <div className="location-copy"><span className="eyebrow">ONDE ESTAMOS</span><h2>Encontre o formato de atendimento adequado à <em>sua rotina.</em></h2><p>O atendimento é realizado presencialmente em Rio Formoso e também na modalidade online. Fale com Andréa para confirmar os detalhes e os horários disponíveis.</p>
           <div className="location-list location-cards"><div className="location-card"><span className="location-card-icon"><MapPin size={21}/></span><strong>Consultório</strong><p>Rua São José, 191A, Centro, Rio Formoso.</p></div><div className="location-card"><span className="location-card-icon"><Video size={21}/></span><strong>Atendimento online</strong><p>Consulte as condições e a disponibilidade pelo WhatsApp.</p></div><div className="location-card"><span className="location-card-icon"><Clock3 size={21}/></span><strong>Agendamento</strong><p>Entre em contato para consultar horários.</p></div></div>
