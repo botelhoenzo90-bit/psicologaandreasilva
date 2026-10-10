@@ -319,3 +319,47 @@ footer{background:var(--footer-surface);color:var(--footer-text);padding:44px 0 
 .andreia-site button[data-variant="whatsapp"] { background:#b48a3f !important; border:2px solid #f0d994 !important; color:white !important; box-shadow:0 8px 25px #8b682e55 !important; }
 .andreia-site button[data-variant="whatsapp"] img { display:block; }
 @media(max-width:760px) { .andreia-site .hero { padding-block:64px !important; } .andreia-site .video-grid { grid-template-columns:1fr; } .andreia-site .clinic-video-frame.vertical-video { width:min(78vw,330px); } .andreia-site .issue-card { padding:24px 21px; min-height:220px; } }
+/* Correção definitiva dos botões: sobrescreve as regras verdes herdadas do template */
+.andreia-site .site-button-gold,
+.andreia-site button.site-button-gold,
+.andreia-site .site-button.site-button-gold,
+.andreia-site button[class~="site-button-gold"] {
+  background: linear-gradient(135deg, #e7cb82 0%, #c5a15b 48%, #b18439 100%) !important;
+  background-color: #c5a15b !important;
+  border: 1px solid #e7cb82 !important;
+  color: #211d16 !important;
+  box-shadow: 0 7px 20px rgba(158, 117, 43, .25) !important;
+}
+.andreia-site .site-button-gold:hover,
+.andreia-site button.site-button-gold:hover,
+.andreia-site .site-button.site-button-gold:hover,
+.andreia-site button[class~="site-button-gold"]:focus-visible {
+  background: linear-gradient(135deg, #f0d995 0%, #d3b166 55%, #bd9347 100%) !important;
+  border-color: #f0d995 !important;
+  color: #211d16 !important;
+}
+.andreia-site .site-button-gold svg { color: #211d16 !important; }
+.andreia-site .floating-whatsapp {
+  background: #c5a15b !important;
+  background-color: #c5a15b !important;
+  border: 2px solid #f0d995 !important;
+  border-radius: 50% !important;
+  width: 64px !important;
+  height: 64px !important;
+  padding: 0 !important;
+  display: grid !important;
+  place-items: center !important;
+  box-shadow: 0 8px 24px rgba(105, 76, 27, .35) !important;
+}
+.andreia-site .floating-whatsapp img {
+  width: 31px !important;
+  height: 31px !important;
+  object-fit: contain !important;
+  filter: none !important;
+}
+.andreia-site .reviews .review-track {
+  animation: andreaLoop 18s linear infinite !important;
+  width: max-content !important;
+}
+.andreia-site .reviews .review-window { overflow: hidden !important; }
+.andreia-site .reviews .conveyor-group { flex-shrink: 0 !important; }
