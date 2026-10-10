@@ -508,3 +508,145 @@ footer{background:var(--footer-surface);color:var(--footer-text);padding:44px 0 
   .andreia-site .footer-logo { width: 145px; }
   .andreia-site .clinic-video-frame.vertical-video { width: min(78vw, 330px); }
 }
+
+
+/* Refinamento visual: logo centralizado, cards com ícones e seção sobre reorganizada */
+.andreia-site .hero-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.andreia-site .brand-logo-image {
+  display: block;
+  width: clamp(190px, 28vw, 285px);
+  max-height: 155px;
+  margin: 0 auto 24px;
+  object-fit: contain;
+  object-position: center;
+  align-self: center;
+}
+.andreia-site .hero-copy .eyebrow,
+.andreia-site .hero-copy h1,
+.andreia-site .hero-copy .hero-lead,
+.andreia-site .hero-copy .hero-note {
+  text-align: center;
+}
+.andreia-site .issues-container .section-heading {
+  max-width: 850px;
+  margin-inline: auto;
+  margin-bottom: 36px;
+}
+.andreia-site .issue-card {
+  min-height: 270px;
+  height: 100%;
+  padding: 28px 25px;
+  display: flex;
+  align-items: stretch;
+}
+.andreia-site .issue-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 13px;
+}
+.andreia-site .issue-icon {
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #a98135;
+  background: linear-gradient(145deg, rgba(216, 185, 119, .22), rgba(216, 185, 119, .07));
+  border: 1px solid rgba(169, 129, 53, .22);
+}
+.andreia-site .issue-icon svg {
+  width: 25px;
+  height: 25px;
+  stroke-width: 1.7;
+}
+.andreia-site .issue-body h3 {
+  max-width: 260px;
+  margin: 0;
+  font-size: clamp(17px, 1.5vw, 20px);
+  line-height: 1.35;
+  text-wrap: balance;
+}
+.andreia-site .issue-body p {
+  max-width: 300px;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.75;
+}
+.andreia-site .about-grid {
+  align-items: start;
+}
+.andreia-site .about-copy {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.andreia-site .about-copy > .eyebrow,
+.andreia-site .about-copy > h2 {
+  order: 0;
+}
+.andreia-site .about-copy > .about-photo {
+  order: 1;
+  width: min(100%, 420px);
+  aspect-ratio: 4 / 3;
+  margin: 8px 0 26px;
+  align-self: center;
+  overflow: hidden;
+  border-radius: 22px;
+}
+.andreia-site .about-photo .about-portrait-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+.andreia-site .about-copy > p,
+.andreia-site .about-copy > .about-points,
+.andreia-site .about-copy > button {
+  order: 2;
+}
+.andreia-site .clinic-video-frame.vertical-video {
+  position: relative;
+  overflow: hidden;
+  border-radius: 24px;
+  background: #171512;
+  box-shadow: 0 22px 55px rgba(39, 29, 13, .15);
+}
+.andreia-site .clinic-video-frame.vertical-video video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  aspect-ratio: 9 / 16;
+  object-fit: contain;
+  background: #171512;
+}
+@media (max-width: 760px) {
+  .andreia-site .brand-logo-image {
+    width: min(72vw, 235px);
+    max-height: 125px;
+    margin-bottom: 20px;
+  }
+  .andreia-site .issue-card {
+    min-height: 250px;
+    padding: 23px 18px;
+  }
+  .andreia-site .issue-icon {
+    width: 50px;
+    height: 50px;
+    flex-basis: 50px;
+    border-radius: 15px;
+  }
+  .andreia-site .about-copy > .about-photo {
+    width: min(100%, 340px);
+  }
+}
