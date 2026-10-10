@@ -380,3 +380,27 @@ footer{background:var(--footer-surface);color:var(--footer-text);padding:44px 0 
   background: #1fbd5a !important;
   background-color: #1fbd5a !important;
 }
+
+
+/* Espaços reservados para os arquivos de identidade visual de Andréa */
+.andreia-site .brand-logo-image {
+  display: block;
+  width: clamp(110px, 18vw, 180px);
+  max-height: 90px;
+  object-fit: contain;
+  object-position: left center;
+  margin: 0 0 22px;
+}
+.andreia-site .about-photo-placeholder { position: relative; overflow: hidden; }
+.andreia-site .about-portrait-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 1;
+}
+.andreia-site .about-photo-placeholder:has(.about-portrait-image:not([style*="display: none"])) .about-placeholder-content {
+  display: none;
+}
