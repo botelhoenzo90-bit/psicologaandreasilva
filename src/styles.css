@@ -363,3 +363,20 @@ footer{background:var(--footer-surface);color:var(--footer-text);padding:44px 0 
 }
 .andreia-site .reviews .review-window { overflow: hidden !important; }
 .andreia-site .reviews .conveyor-group { flex-shrink: 0 !important; }
+
+/* Botão flutuante do WhatsApp: verde oficial, mantendo o ícone branco */
+.andreia-site .floating-whatsapp,
+.andreia-site a.floating-whatsapp,
+.andreia-site button.floating-whatsapp {
+  background: #25D366 !important;
+  background-color: #25D366 !important;
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, .35) !important;
+}
+.andreia-site .floating-whatsapp:hover,
+.andreia-site a.floating-whatsapp:hover,
+.andreia-site button.floating-whatsapp:hover {
+  background: #1fbd5a !important;
+  background-color: #1fbd5a !important;
+}
