@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 
 const whatsapp = "https://wa.me/5581988881202";
 const clinicMapUrl = "https://www.google.com/maps?q=Rua+Sao+Jose+191A+Rio+Formoso+PE&output=embed";
-const clinicVideoUrl = "";
+const clinicVideoUrl = "/bcd3e00e-13fd-4b90-abc2-ba4c91a95aba%20(1).mp4";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
@@ -58,7 +58,7 @@ function Index() {
     <main className="site andreia-site">
       <section className="hero" id="inicio">
         <div className="container hero-grid"><div className="hero-copy">
-          <img className="brand-logo-image" src="/images/andrea-logo.png" alt="Logo de Andréa Silva" onError={(event) => { event.currentTarget.style.display = "none"; }} />
+          <img className="brand-logo-image" src="/Emblema%20Dourado%20de%20Psicologia%20e%20Crescimento.png" alt="Logo de Andréa Silva" onError={(event) => { event.currentTarget.style.display = "none"; }} />
           <span className="eyebrow">PSICOLOGIA • RIO FORMOSO E ONLINE</span>
           <h1>Um espaço para <em>cuidar de você.</em></h1>
           <p className="hero-lead">Escuta acolhedora para compreender emoções, respeitar sua história e olhar para si com mais cuidado.</p>
@@ -106,7 +106,7 @@ function Index() {
       </div></div></section>
 
       <section className="section about" id="sobre"><div className="container about-grid">
-        <div className="about-photo about-photo-placeholder"><img className="about-portrait-image" src="/images/andrea-silva.jpg" alt="Retrato da psicóloga Andréa Silva" onError={(event) => { event.currentTarget.style.display = "none"; }} /><div className="about-placeholder-content"><UserRound size={44}/><strong>Andréa Silva</strong><span>Psicóloga • CRP 02/34229</span></div></div>
+        <div className="about-photo about-photo-placeholder"><img className="about-portrait-image" src="/download.png" alt="Retrato da psicóloga Andréa Silva" onError={(event) => { event.currentTarget.style.display = "none"; }} /><div className="about-placeholder-content"><UserRound size={44}/><strong>Andréa Silva</strong><span>Psicóloga • CRP 02/34229</span></div></div>
         <div className="about-copy"><span className="eyebrow">PRAZER, SOU ANDRÉA</span><h2>Um encontro profissional com <em>escuta, ética e humanidade.</em></h2>
           <p>Sou Andréa Silva, psicóloga (CRP 02/34229). Este espaço foi criado para que você conheça meu trabalho e encontre um caminho simples para tirar dúvidas sobre o acompanhamento psicológico.</p>
           <p>Acredito na importância de uma escuta atenta e ética, que reconheça a singularidade de cada pessoa. O processo terapêutico é construído em diálogo, respeitando sua história, seu contexto e as questões que fazem sentido para você.</p>
@@ -140,8 +140,8 @@ function Index() {
       </div></section>
 
       <section className="section video-section" id="consultorio"><div className="container video-grid">
-        <div className="video-copy"><span className="eyebrow">CONHEÇA O ESPAÇO</span><h2>Um ambiente pensado para receber você com <em>tranquilidade.</em></h2><p>Veja um pouco do consultório e conheça o espaço onde acontecem os atendimentos presenciais. O vídeo poderá ser atualizado com a gravação enviada pela Andréa.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o consultório e o atendimento presencial.")}>Informações sobre o consultório <ArrowRight size={18}/></Button></div>
-        <div className="clinic-video-frame">{clinicVideoUrl ? <iframe src={clinicVideoUrl} title="Vídeo do consultório de Andréa Silva" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/> : <div className="video-placeholder"><span className="video-play"><Video size={34}/></span><strong>Vídeo do consultório</strong><p>Espaço reservado para inserir o vídeo da Andréa</p></div>}</div>
+        <div className="video-copy"><span className="eyebrow">CONHEÇA O ESPAÇO</span><h2>Um ambiente pensado para receber você com <em>tranquilidade.</em></h2><p>Veja um pouco do consultório e conheça o espaço onde acontecem os atendimentos presenciais.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o consultório e o atendimento presencial.")}>Informações sobre o consultório <ArrowRight size={18}/></Button></div>
+        <div className="clinic-video-frame vertical-video"><video controls playsInline preload="metadata" poster="/Emblema%20Dourado%20de%20Psicologia%20e%20Crescimento.png" aria-label="Vídeo do consultório de Andréa Silva"><source src={clinicVideoUrl} type="video/mp4" />Seu navegador não consegue reproduzir este vídeo.</video></div>
       </div></section>
 
       <section className="section location" id="localizacao"><div className="container location-grid">
@@ -159,7 +159,7 @@ function Index() {
 
       <section className="final-cta"><div className="container center"><span className="eyebrow">SEU PRIMEIRO PASSO PODE SER SIMPLES</span><h2>Seu cuidado pode começar com uma <em>conversa.</em></h2><p>Entre em contato para conhecer o atendimento psicológico, esclarecer dúvidas e verificar os horários disponíveis.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}>Agendar com Andréa <ArrowRight size={19}/></Button></div></section>
 
-      <footer><div className="container footer-grid"><div><div className="andrea-wordmark footer-wordmark"><span className="wordmark-symbol">Ψ</span><span>ANDRÉA SILVA<small>PSICÓLOGA • CRP 02/34229</small></span></div><p>Escuta, acolhimento e cuidado psicológico.<br/>Atendimento presencial e online.</p></div><div><strong>Atendimento</strong><span>Rua São José, 191A</span><span>Centro • Rio Formoso</span><span>Presencial e online</span></div><div><strong>Contato</strong><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento.")}><MessageCircle size={16}/> WhatsApp</Button><a href="#inicio">Voltar ao início <ArrowRight size={16}/></a></div></div><div className="footer-bottom">© {new Date().getFullYear()} Andréa Silva • Psicóloga • CRP 02/34229. Todos os direitos reservados.</div></footer>
+      <footer><div className="container footer-grid"><div><img className="footer-logo" src="/Emblema%20Dourado%20de%20Psicologia%20e%20Crescimento.png" alt="Emblema de Andréa Silva, psicóloga" /><p>Escuta, acolhimento e cuidado psicológico.<br/>Atendimento presencial e online.</p></div><div><strong>Atendimento</strong><span>Rua São José, 191A</span><span>Centro • Rio Formoso</span><span>Presencial e online</span></div><div><strong>Contato</strong><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento.")}><MessageCircle size={16}/> WhatsApp</Button><a href="#inicio">Voltar ao início <ArrowRight size={16}/></a></div></div><div className="footer-bottom">© {new Date().getFullYear()} Andréa Silva • Psicóloga • CRP 02/34229. Todos os direitos reservados.</div></footer>
       <Button variant="whatsapp" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de informações sobre atendimento psicológico.")} aria-label="Falar com Andréa pelo WhatsApp"><img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="" width="27" height="27" /></Button>
     </main>
   );
