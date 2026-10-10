@@ -1,5 +1,5 @@
 ## Ajustes solicitados
-- [ ] Compactar os cards de temas em quadrados, ampliar os temas e mover o vídeo para logo abaixo do carrossel.
+- [x] Compactar os cards de temas em quadrados, ampliar os temas e mover o vídeo para logo abaixo do carrossel.
 - [x] Aplicar a logomarca enviada da Natali ao favicon e à imagem de compartilhamento.
 - [x] Clarear os fundos em bege, diferenciar Conhecer o processo, corrigir setas laterais e conferir SEO na prévia e no site publicado.
 - [x] Configurar e verificar SEO local, metadados, dados estruturados e sitemap na prévia.
