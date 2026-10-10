@@ -58,6 +58,7 @@ function Index() {
     <main className="site andreia-site">
       <section className="hero" id="inicio">
         <div className="container hero-grid"><div className="hero-copy">
+          <img className="brand-logo-image" src="/images/andrea-logo.png" alt="Logo de Andréa Silva" onError={(event) => { event.currentTarget.style.display = "none"; }} />
           <span className="eyebrow">PSICOLOGIA • RIO FORMOSO E ONLINE</span>
           <h1>Um espaço para <em>cuidar de você.</em></h1>
           <p className="hero-lead">Escuta acolhedora para compreender emoções, respeitar sua história e olhar para si com mais cuidado.</p>
@@ -105,7 +106,7 @@ function Index() {
       </div></div></section>
 
       <section className="section about" id="sobre"><div className="container about-grid">
-        <div className="about-photo about-photo-placeholder"><div className="about-placeholder-content"><UserRound size={44}/><strong>Andréa Silva</strong><span>Psicóloga • CRP 02/34229</span></div></div>
+        <div className="about-photo about-photo-placeholder"><img className="about-portrait-image" src="/images/andrea-silva.jpg" alt="Retrato da psicóloga Andréa Silva" onError={(event) => { event.currentTarget.style.display = "none"; }} /><div className="about-placeholder-content"><UserRound size={44}/><strong>Andréa Silva</strong><span>Psicóloga • CRP 02/34229</span></div></div>
         <div className="about-copy"><span className="eyebrow">PRAZER, SOU ANDRÉA</span><h2>Um encontro profissional com <em>escuta, ética e humanidade.</em></h2>
           <p>Sou Andréa Silva, psicóloga (CRP 02/34229). Este espaço foi criado para que você conheça meu trabalho e encontre um caminho simples para tirar dúvidas sobre o acompanhamento psicológico.</p>
           <p>Acredito na importância de uma escuta atenta e ética, que reconheça a singularidade de cada pessoa. O processo terapêutico é construído em diálogo, respeitando sua história, seu contexto e as questões que fazem sentido para você.</p>
