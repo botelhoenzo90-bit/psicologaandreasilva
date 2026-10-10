@@ -273,3 +273,21 @@ footer{background:var(--footer-surface);color:var(--footer-text);padding:44px 0 
   .andrea-wordmark > span:last-child { font-size: 1.15rem; }
   .andrea-wordmark small { font-size: .58rem; letter-spacing: .12em; }
 }
+
+
+/* Refinamento dourado: neutraliza tons verdes herdados do layout anterior */
+.andreia-site { --primary:#b48a3f; --primary-foreground:#211d16; --ring:#c5a15b; --sage:#c5a15b; --sage-dark:#292826; --hero-surface:#242321; }
+.andreia-site .marquee { background:#292826 !important; color:#d4b46d !important; }
+.andreia-site .marquee i { color:#d4b46d !important; }
+.andreia-site .issue-photo { height:210px; overflow:hidden; background:#ded7cb; }
+.andreia-site .issue-photo img { display:block; width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
+.andreia-site .issue-card:hover .issue-photo img { transform:scale(1.055); }
+.andreia-site .issue-card { overflow:hidden; background:#f8f7f4; }
+.andreia-site .issue-body h3 { color:#292826; }
+.andreia-site .hero .wordmark-symbol { border-color:#c5a15b; color:#d4b46d; }
+.andreia-site .hero .andrea-wordmark { color:#d4b46d; }
+.andreia-site .about-points svg, .andreia-site .hero-credentials svg { color:#d4b46d !important; }
+.andreia-site .faq-item button svg { color:#b48a3f; }
+.andreia-site .step-num, .andreia-site .method-cards article > span { color:#a17c36 !important; }
+.andreia-site .location-card-icon, .andreia-site .clinic-highlight-icon, .andreia-site .method-icon, .andreia-site .review-avatar { color:#a17c36 !important; background:#eee6d8 !important; }
+.andreia-site .hero { background:radial-gradient(ellipse at 80% 20%,#49443a 0%,#292826 44%,#1d1c1a 100%) !important; }
