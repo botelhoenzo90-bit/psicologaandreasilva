@@ -76,7 +76,7 @@ function Index() {
           <span className="eyebrow">PSICÓLOGA • RIO FORMOSO • PRESENCIAL E ONLINE</span>
           <h1>Um espaço para <em>cuidar de você.</em></h1>
           <p className="hero-lead">Escuta acolhedora para compreender emoções, respeitar sua história e olhar para si com mais cuidado.</p>
-          <div className="hero-actions hero-actions-centered"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de informações sobre o atendimento psicológico.")}><MessageCircle/> Agendar atendimento</Button></div>
+          <div className="hero-actions hero-actions-centered"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}><MessageCircle/> Agendar atendimento</Button></div>
           <p className="hero-note">Andréa Silva • Psicóloga • CRP 02/34229</p>
         </div></div>
       </section>
@@ -86,7 +86,7 @@ function Index() {
         <div className="container narrow center"><span className="eyebrow">VOCÊ PODE COMEÇAR DO JEITO QUE ESTÁ</span>
           <h2>Nem tudo precisa estar claro para você dar o primeiro passo. <em>Podemos começar pela escuta.</em></h2>
           <p>Nem sempre é fácil entender o que se passa por dentro ou encontrar palavras para explicar. A psicoterapia oferece um espaço de escuta para olhar com cuidado para suas emoções, relações e escolhas. Você não precisa chegar com tudo organizado: podemos começar pelo que está presente hoje.</p>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o acompanhamento psicológico.")}>Quero saber mais <ArrowRight size={18}/></Button></div>
+          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}>Quero saber mais <ArrowRight size={18}/></Button></div>
         </div>
       </section>
 
@@ -96,13 +96,13 @@ function Index() {
           const Icon = concernIcons[i] ?? Brain;
           return <article className="issue-card" key={title}><div className="issue-body"><span className="issue-icon" aria-hidden="true"><Icon size={25}/></span><h3>{title}</h3><p>{desc}</p></div></article>;
         })}</div>)}</div></div>
-        <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de conversar sobre atendimento psicológico.")}>Vamos conversar <MessageCircle size={18}/></Button></div>
+        <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}>Vamos conversar <MessageCircle size={18}/></Button></div>
       </div></section>
 
       <section className="section video-section" id="consultorio"><div className="container video-grid">
         <div className="video-copy"><span className="eyebrow">CONHEÇA O ESPAÇO</span><h2>Um ambiente pensado para receber você com <em>tranquilidade.</em></h2><p>Veja um pouco do consultório e conheça o espaço onde acontecem os atendimentos presenciais.</p></div>
         <div className="clinic-video-frame vertical-video"><video controls playsInline preload="metadata" poster="/Emblema%20Dourado%20de%20Psicologia%20e%20Crescimento.png" aria-label="Vídeo do consultório de Andréa Silva"><source src={clinicVideoUrl} type="video/mp4" />Seu navegador não consegue reproduzir este vídeo. Verifique se o arquivo MP4 está disponível em public.</video></div>
-        <div className="video-cta"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o consultório e o atendimento presencial.")}>Informações sobre o consultório <ArrowRight size={18}/></Button></div>
+        <div className="video-cta"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento presencial ou online.")}>Informações sobre o consultório <ArrowRight size={18}/></Button></div>
       </div></section>
 
       <section className="section process situations-section" id="quando-procurar"><div className="container">
@@ -113,7 +113,7 @@ function Index() {
           ["03","Quando relações pesam","Conflitos e padrões nos relacionamentos podem despertar questões que merecem ser olhadas com cuidado."],
           ["04","Quando você quer se conhecer","A terapia também pode ser um espaço de reflexão, autoconhecimento e desenvolvimento pessoal."]
         ].map(([n,t,d]) => <article className="step" key={n}><div className="step-num">{n}</div><div><h3>{t}</h3><p>{d}</p></div></article>)}</div>
-        <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de consultar os horários disponíveis.")}>Consultar horários <ArrowRight size={18}/></Button></div>
+        <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico e consultar os horários disponíveis.")}>Consultar horários <ArrowRight size={18}/></Button></div>
       </div></section>
 
       <section className="section clinic-story"><div className="container clinic-story-grid"><div className="clinic-copy">
@@ -125,7 +125,7 @@ function Index() {
           <div className="clinic-highlight-card"><span className="clinic-highlight-icon"><HeartHandshake size={22}/></span><strong>Acolhimento</strong><p>Um espaço para conversar com tranquilidade e explorar o que faz sentido para você.</p></div>
           <div className="clinic-highlight-card"><span className="clinic-highlight-icon"><Sparkles size={22}/></span><strong>Autoconhecimento</strong><p>Tempo para refletir sobre sentimentos, escolhas, relações e necessidades.</p></div>
         </div>
-        <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Quero saber como funciona o acompanhamento psicológico.")}>Conhecer o atendimento <ArrowRight size={18}/></Button>
+        <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}>Conhecer o atendimento <ArrowRight size={18}/></Button>
       </div></div></section>
 
       <section className="section about" id="sobre"><div className="container about-grid">
@@ -134,14 +134,14 @@ function Index() {
           <p>Acredito na importância de uma escuta atenta e ética, que reconheça a singularidade de cada pessoa. O processo terapêutico é construído em diálogo, respeitando sua história, seu contexto e as questões que fazem sentido para você.</p>
           <p>Para conhecer minha abordagem de trabalho, as possibilidades de atendimento e esclarecer dúvidas, entre em contato. Será um prazer orientar você sobre os próximos passos.</p>
           <div className="about-points"><div><Check size={17}/> Psicóloga • CRP 02/34229</div><div><Check size={17}/> Atendimento presencial e online</div><div><Check size={17}/> Escuta individualizada</div></div>
-          <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de conhecer melhor seu trabalho.")}>Fale comigo <MessageCircle size={18}/></Button>
+          <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}>Fale comigo <MessageCircle size={18}/></Button>
         </div>
       </div></section>
 
       <section className="section method-section" id="como-funciona"><div className="container">
         <div className="section-heading center"><span className="eyebrow">COMO FUNCIONA</span><h2>Um começo possível, <em>passo a passo.</em></h2><p>Você pode entrar em contato para entender como funciona o processo e decidir com tranquilidade se este é o momento de começar.</p></div>
         <div className="method-cards">{steps.map(([n,title,desc])=><article key={n}><div className="method-icon"><span>{n}</span></div><span>{n}</span><h3>{title}</h3><p>{desc}</p></article>)}</div>
-        <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de iniciar uma conversa sobre atendimento psicológico.")}>Dar o primeiro passo <ArrowRight size={18}/></Button></div>
+        <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}>Dar o primeiro passo <ArrowRight size={18}/></Button></div>
       </div></section>
 
       <section className="section reviews" id="avaliacoes"><div className="container reviews-container">
@@ -158,26 +158,26 @@ function Index() {
             <article className="review-card"><div className="review-stars"><span>★ ★ ★ ★ ★</span></div><p className="review-quote">“Gostei de poder conversar no meu tempo, sem sentir que precisava ter todas as respostas. A escuta acolhedora faz diferença na minha experiência.”</p><div className="review-person"><div className="review-avatar">C</div><div className="review-person-info"><h3>Camila Ferreira</h3><span>Nome fictício • exemplo ilustrativo</span></div></div></article>
           </div>
         </div></div>
-        <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o atendimento psicológico.")}>Conversar com Andréa <MessageCircle size={18}/></Button></div>
+        <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}>Conversar com Andréa <MessageCircle size={18}/></Button></div>
       </div></section>
 
             <section className="section location" id="localizacao"><div className="container location-grid">
         <figure className="location-map"><iframe title="Mapa do endereço de atendimento em Rio Formoso" src={clinicMapUrl} loading="lazy" allowFullScreen referrerPolicy="strict-origin-when-cross-origin"/></figure>
         <div className="location-copy"><span className="eyebrow">ONDE ESTAMOS</span><h2>Encontre o formato de atendimento adequado à <em>sua rotina.</em></h2><p>O atendimento é realizado presencialmente em Rio Formoso e também na modalidade online. Fale com Andréa para confirmar os detalhes e os horários disponíveis.</p>
           <div className="location-list location-cards"><div className="location-card"><span className="location-card-icon"><MapPin size={21}/></span><strong>Consultório</strong><p>Rua São José, 191A, Centro, Rio Formoso.</p></div><div className="location-card"><span className="location-card-icon"><Video size={21}/></span><strong>Atendimento online</strong><p>Consulte as condições e a disponibilidade pelo WhatsApp.</p></div><div className="location-card"><span className="location-card-icon"><Clock3 size={21}/></span><strong>Agendamento</strong><p>Entre em contato para consultar horários.</p></div></div>
-          <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de consultar endereço e horários de atendimento.")}>Consultar informações <ArrowRight size={18}/></Button>
+          <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento e confirmar endereço e horários.")}>Consultar informações <ArrowRight size={18}/></Button>
         </div>
       </div></section>
 
       <section className="section faq" id="faq"><div className="container faq-grid">
-        <div className="faq-intro"><span className="eyebrow">DÚVIDAS FREQUENTES</span><h2>Vamos esclarecer suas <em>dúvidas?</em></h2><p>Se precisar de outras informações, entre em contato diretamente com Andréa.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Tenho algumas dúvidas sobre o atendimento psicológico.")}>Falar pelo WhatsApp <MessageCircle size={18}/></Button></div>
+        <div className="faq-intro"><span className="eyebrow">DÚVIDAS FREQUENTES</span><h2>Vamos esclarecer suas <em>dúvidas?</em></h2><p>Se precisar de outras informações, entre em contato diretamente com Andréa.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico e tirar algumas dúvidas.")}>Falar pelo WhatsApp <MessageCircle size={18}/></Button></div>
         <div className="faq-list">{faq.map(([q,a],i)=><div className={`faq-item ${openFaq===i ? "open":""}`} key={q}><Button variant="sitePlain" size="site" aria-expanded={openFaq===i} onClick={() => setOpenFaq(openFaq===i ? null : i)}><span>{q}</span><ChevronDown size={18}/></Button>{openFaq===i && <p>{a}</p>}</div>)}</div>
       </div></section>
 
       <section className="final-cta"><div className="container center"><span className="eyebrow">SEU PRIMEIRO PASSO PODE SER SIMPLES</span><h2>Seu cuidado pode começar com uma <em>conversa.</em></h2><p>Entre em contato para conhecer o atendimento psicológico, esclarecer dúvidas e verificar os horários disponíveis.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}>Agendar com Andréa <ArrowRight size={19}/></Button></div></section>
 
       <footer><div className="container footer-grid"><div><img className="footer-logo" src="/Emblema%20Dourado%20de%20Psicologia%20e%20Crescimento.png" alt="Emblema de Andréa Silva, psicóloga" /><p>Escuta, acolhimento e cuidado psicológico.<br/>Atendimento presencial e online.</p></div><div><strong>Atendimento</strong><span>Rua São José, 191A</span><span>Centro • Rio Formoso</span><span>Presencial e online</span></div><div><strong>Contato</strong><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento.")}><MessageCircle size={16}/> WhatsApp</Button><a href="#inicio">Voltar ao início <ArrowRight size={16}/></a></div></div><div className="footer-bottom">© {new Date().getFullYear()} Andréa Silva • Psicóloga • CRP 02/34229. Todos os direitos reservados.</div></footer>
-      <Button variant="whatsapp" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de informações sobre atendimento psicológico.")} aria-label="Falar com Andréa pelo WhatsApp"><img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="" width="27" height="27" /></Button>
+      <Button variant="whatsapp" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")} aria-label="Falar com Andréa pelo WhatsApp"><img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="" width="27" height="27" /></Button>
     </main>
   );
 }
