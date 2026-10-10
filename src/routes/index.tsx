@@ -1,288 +1,165 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  ArrowRight,
-  Brain,
-  Check,
-  ChevronDown,
-  Clock3,
-  HeartHandshake,
-  Instagram,
-  MapPin,
-  MessageCircle,
-  Monitor,
-  ShieldCheck,
-  Sparkles,
-  Star,
-  UserRound,
-  Video,
-} from "lucide-react";
+import { ArrowRight, Brain, Check, ChevronDown, Clock3, HeartHandshake, MapPin, MessageCircle, Monitor, ShieldCheck, UserRound, Video, Laptop, CalendarDays, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
-import whatsappIcon from "@/assets/whatsapp.png.asset.json";
-import depression from "@/assets/depressao.webp.asset.json";
-import anxiety from "@/assets/ansiedade.png.asset.json";
-import dependency from "@/assets/dependencia-emocional.png.asset.json";
-import fears from "@/assets/medos.png.asset.json";
-import trauma from "@/assets/traumas.png.asset.json";
-import panic from "@/assets/panico.webp.asset.json";
-import insomnia from "@/assets/insonia.png.asset.json";
-import esteem from "@/assets/autoestima.png.asset.json";
-import relationships from "@/assets/relacionamentos.png.asset.json";
-import grief from "@/assets/luto.png.asset.json";
-import sharePhoto from "@/assets/natali-compartilhar.jpg.asset.json";
-import logo from "@/assets/logo-natali.png.asset.json";
-
-const siteUrl = "https://nataliterapeuta.lovable.app";
-const shareUrl = new URL(sharePhoto.url, siteUrl).href;
+const whatsapp = "https://wa.me/5581988881202";
+const clinicMapUrl = "https://www.google.com/maps?q=Rua+Sao+Jose+191A+Rio+Formoso+PE&output=embed";
+const clinicVideoUrl = "";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
   head: () => ({
     meta: [
-      { title: "Natali | Psicanálise, cuidado emocional e terapias integrativas" },
-      { name: "description", content: "Psicanálise, terapia integrativa emocional, terapias cognitivo-comportamentais e TRG Kids. Atendimento online, presencial e domiciliar mediante agendamento." },
-      { property: "og:title", content: "Natali | Psicanálise, cuidado emocional e terapias integrativas" },
-      { property: "og:description", content: "Conheça Natali, psicanalista e terapeuta integrativa emocional. Atendimento presencial no Centro de atendimento online, presencial e domiciliar e online, com escuta individualizada e acolhimento." },
+      { title: "Andréa Silva | Psicóloga | Atendimento presencial e online" },
+      { name: "description", content: "Conheça o trabalho da psicóloga Andréa Silva. Atendimento presencial em Rio Formoso e online, com escuta acolhedora e respeito à sua história." },
+      { property: "og:title", content: "Andréa Silva | Psicóloga" },
+      { property: "og:description", content: "Um espaço de escuta, acolhimento e autoconhecimento. Atendimento presencial e online." },
       { name: "robots", content: "index, follow, max-image-preview:large" },
-      { name: "google-site-verification", content: "9myn0HdI7aGpUZnVvPyhIOqrxVOLgTJA9XtYO1VNmew" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary_large_image" },
-      { property: "og:url", content: siteUrl },
-      { property: "og:image", content: shareUrl },
-      { property: "og:image:width", content: "1200" },
-      { property: "og:image:height", content: "630" },
-      { property: "og:image:alt", content: "Logomarca Natali — Psicanalista e Terapeuta" },
-      { name: "twitter:image", content: shareUrl },
     ],
-    links: [
-      { rel: "canonical", href: siteUrl },
-      { rel: "apple-touch-icon", href: logo.url },
-    ],
-    scripts: [{
-      type: "application/ld+json",
-      children: JSON.stringify({
-        "@context": "https://schema.org",
-        "@graph": [
-          { "@type": "WebSite", "@id": `${siteUrl}/#website`, url: siteUrl, name: "Natali — Psicanalista e Terapeuta Integrativa", inLanguage: "pt-BR" },
-          {
-            "@type": "LocalBusiness", "@id": `${siteUrl}/#atendimento`,
-            name: "Natali — Psicanalista e Terapeuta Integrativa", url: siteUrl,
-            telephone: "+55 51 9875-1059",
-            description: "Atendimento de terapias integrativas e escuta terapêutica presencial em atendimento online, presencial e domiciliar e online.",
-            address: {
-              "@type": "PostalAddress", streetAddress: "Consulte o endereço pelo WhatsApp",
-              addressLocality: "Brasil",
-              postalCode: "Agendamento prévio", addressCountry: "BR",
-            },
-          },
-        ],
-      }),
-    }],
   }),
   component: Index,
 });
 
-const whatsapp = "https://wa.me/555198751059";
-const clinicMapUrl = "https://www.google.com/maps?q=Porto+Alegre,+RS,+Brasil&output=embed";
-const clinicVideoUrl = "";
+function goWhatsapp(message: string) {
+  window.open(`${whatsapp}?text=${encodeURIComponent(message)}`, "_blank", "noopener,noreferrer");
+}
 
-const issues = [
-  ["Ansiedade e sobrecarga", "Um espaço para conversar sobre preocupações, rotina e emoções difíceis."],
-  ["Autoconhecimento", "Reflexão sobre sentimentos, escolhas, limites e relações."],
-  ["Relações e família", "Compreender conflitos, comunicação e vínculos importantes."],
-  ["Cuidado infantil", "Atendimento infantil TRG Kids, conforme avaliação e adequação."],
-  ["Mudanças de vida", "Apoio para refletir sobre desafios e fases de transição."],
-  ["Terapia integrativa", "Possibilidades de cuidado conversadas de forma individualizada."],
-  ["Escuta terapêutica", "Um espaço de conversa com atenção à sua experiência."],
-  ["Terapia cognitivo-comportamental", "Abordagem a ser conversada conforme sua necessidade e objetivos."],
-  ["Saúde emocional", "Palestras e conversas sobre bem-estar e desenvolvimento pessoal."],
+const concerns = [
+  ["Ansiedade e preocupações", "Um espaço para falar sobre pensamentos acelerados, inseguranças e desafios do dia a dia."],
+  ["Autoconhecimento", "Reconhecer sentimentos, necessidades, limites e padrões que fazem parte da sua história."],
+  ["Relacionamentos", "Refletir sobre vínculos, comunicação, conflitos e formas de se relacionar."],
+  ["Autoestima e identidade", "Explorar a maneira como você se percebe e fortalecer uma relação mais consciente consigo."],
+  ["Fases de mudança", "Acolher dúvidas e emoções que podem surgir em transições pessoais e profissionais."],
+  ["Sobrecarga emocional", "Encontrar espaço para nomear o que pesa e compreender melhor suas experiências."],
 ];
 
-const issueImages = [depression, anxiety, dependency, fears, trauma, panic, insomnia, esteem, relationships, grief];
-
-const reviews = [
-  { name: "Mariana Oliveira", text: "Eu gostei muito de ter um espaço onde pude falar com tranquilidade, sem sentir que precisava esconder o que estava passando. A conversa me ajudou a olhar para algumas situações de outro jeito." },
-  { name: "Camila Rodrigues", text: "Desde o primeiro contato, me senti acolhida e respeitada. Foi importante poder tirar minhas dúvidas e entender como o acompanhamento poderia funcionar para mim, no meu tempo." },
-  { name: "Juliana Martins", text: "Gostei da atenção e da forma cuidadosa de conduzir a conversa. Consegui organizar melhor algumas ideias e refletir sobre coisas que eu vinha deixando de lado." },
-  { name: "Fernanda Costa", text: "Eu estava procurando um atendimento em que pudesse conversar sem julgamentos. A experiência foi acolhedora e me senti à vontade para falar sobre o que era importante para mim." },
+const steps = [
+  ["01", "Primeiro contato", "Envie uma mensagem para tirar dúvidas e conhecer as opções de atendimento."],
+  ["02", "Acolhimento e escuta", "Na sessão, você terá espaço para falar sobre o que motivou a busca por acompanhamento."],
+  ["03", "Construção do processo", "Os objetivos e a frequência são conversados de forma individual, respeitando suas necessidades."],
 ];
 
 const faq = [
-  ["Quais abordagens Natali utiliza?", "Natali oferece psicanálise, terapia integrativa emocional, terapias cognitivo-comportamentais e TRG Kids. A abordagem é definida de forma individualizada."],
-  ["Quais modalidades de atendimento estão disponíveis?", "Natali atende online, presencialmente e em domicílio, conforme disponibilidade e região atendida."],
-  ["Quanto tempo dura o atendimento?", "A duração e a frequência são conversadas diretamente com Natali, considerando a necessidade e a modalidade de atendimento."],
-  ["Quais atendimentos estão disponíveis?", "Os atendimentos incluem psicanálise, terapia integrativa emocional, terapias cognitivo-comportamentais, TRG Kids e palestras de saúde emocional e desenvolvimento pessoal."],
-  ["A terapia substitui acompanhamento médico?", "Não. A terapia não substitui avaliação ou tratamento médico quando eles forem necessários. Em situações de sofrimento intenso, procure também um profissional de saúde adequado."],
-  ["Como começo?", "Clique em um dos botões de agendamento e envie uma mensagem. Você poderá tirar suas dúvidas e verificar a modalidade de atendimento mais adequada."],
+  ["Como faço para agendar?", "Entre em contato pelo WhatsApp para conversar, esclarecer dúvidas e consultar os horários disponíveis."],
+  ["O atendimento pode ser online?", "Sim. Andréa oferece atendimento presencial e online. Entre em contato para confirmar os detalhes e a disponibilidade."],
+  ["Onde fica o consultório?", "O endereço informado é Rua São José, 191A, Centro, Rio Formoso. Confirme os detalhes pelo WhatsApp antes da primeira visita."],
+  ["Preciso saber exatamente o que dizer na primeira sessão?", "Não. Você pode começar falando do que está vivendo ou do que fez você procurar ajuda. Não é necessário chegar com tudo organizado."],
+  ["A terapia é igual para todo mundo?", "Não. A experiência e os objetivos são individuais e são construídos em diálogo com a profissional."],
+  ["Quais são as especialidades e abordagens da Andréa?", "As informações específicas sobre abordagem e áreas de atuação podem ser confirmadas diretamente com Andréa durante o primeiro contato."],
 ];
-
-function goWhatsapp(message: string) {
-  window.open(`${whatsapp}?text=${encodeURIComponent(message)}`, "_blank");
-}
 
 function Index() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   return (
-    <main className="site">
+    <main className="site andreia-site">
       <section className="hero" id="inicio">
         <div className="container hero-grid">
           <div className="hero-copy">
-            <img className="natali-logo" src={logo.url} alt="Logomarca Natali — Psicanalista e Terapeuta" />
-            <h1>Natali</h1>
-            <p className="hero-title">Psicanalista • Terapeuta Integrativa Emocional</p>
-            <p className="hero-statement">Seu bem-estar começa quando você encontra espaço para ser ouvida.</p>
-            <p className="hero-lead">Um cuidado que considera suas emoções, sua história e as necessidades de cada fase da vida.</p>
-            <div className="hero-credentials"><span><ShieldCheck size={17}/> Escuta ativa e acolhimento</span><span><Monitor size={17}/> Online, presencial e domiciliar</span></div>
-            <div className="hero-actions hero-actions-centered">
-              <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Gostaria de agendar um atendimento e consultar os horários disponíveis.")}><MessageCircle/> Agendar atendimento</Button>
-            </div>
+            <div className="andrea-wordmark"><span className="wordmark-symbol">Ψ</span><span>ANDRÉA SILVA<small>PSICÓLOGA • CRP 02/34229</small></span></div>
+            <span className="eyebrow">UM ESPAÇO DE ESCUTA E ACOLHIMENTO</span>
+            <h1>Você não precisa dar conta de tudo <em>sozinha.</em></h1>
+            <p className="hero-statement">Cuidar da saúde emocional também é uma forma de cuidar de você.</p>
+            <p className="hero-lead">Um espaço de escuta respeitosa para compreender o que você sente, olhar para sua história e construir novas possibilidades no seu tempo.</p>
+            <div className="hero-credentials"><span><ShieldCheck size={17}/> Escuta com respeito e privacidade</span><span><Monitor size={17}/> Atendimento presencial e online</span></div>
+            <div className="hero-actions hero-actions-centered"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de informações sobre o atendimento psicológico e horários disponíveis.")}><MessageCircle/> Agendar atendimento</Button></div>
+            <p className="hero-note">Rio Formoso • Pernambuco</p>
           </div>
         </div>
       </section>
 
-      <div className="marquee"><div className="marquee-track"><div className="marquee-group" aria-hidden="true"><span>PSICANÁLISE</span><i>✦</i><span>TERAPIA INTEGRATIVA</span><i>✦</i><span>TCC</span><i>✦</i><span>TRG KIDS</span><i>✦</i><span>ESCUTA ATIVA</span><i>✦</i><span>SAÚDE EMOCIONAL</span><i>✦</i><span>ATENDIMENTO ONLINE</span><i>✦</i></div><div className="marquee-group" aria-hidden="true"><span>PSICANÁLISE</span><i>✦</i><span>TERAPIA INTEGRATIVA</span><i>✦</i><span>TCC</span><i>✦</i><span>TRG KIDS</span><i>✦</i><span>ESCUTA ATIVA</span><i>✦</i><span>SAÚDE EMOCIONAL</span><i>✦</i><span>ATENDIMENTO ONLINE</span><i>✦</i></div></div></div>
+      <div className="marquee"><div className="marquee-track"><div className="marquee-group" aria-hidden="true"><span>PSICOLOGIA</span><i>✦</i><span>ESCUTA</span><i>✦</i><span>AUTOCONHECIMENTO</span><i>✦</i><span>SAÚDE EMOCIONAL</span><i>✦</i><span>ACOLHIMENTO</span><i>✦</i><span>CUIDADO</span><i>✦</i></div><div className="marquee-group" aria-hidden="true"><span>PSICOLOGIA</span><i>✦</i><span>ESCUTA</span><i>✦</i><span>AUTOCONHECIMENTO</span><i>✦</i><span>SAÚDE EMOCIONAL</span><i>✦</i><span>ACOLHIMENTO</span><i>✦</i><span>CUIDADO</span><i>✦</i></div></div></div>
 
       <section className="section intro-section">
-        <div className="container narrow center">
-          <span className="eyebrow">UM ESPAÇO PARA RECOMEÇAR</span>
-          <h2>Você merece ser acolhida com tempo, respeito e <em>escuta verdadeira.</em></h2>
-          <p>Nem sempre é simples colocar em palavras aquilo que pesa. O acompanhamento oferece um espaço de conversa e reflexão para compreender sentimentos, reconhecer necessidades e construir caminhos possíveis no seu ritmo.</p>
-          <div className="center action">
-            <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Quero agendar meu atendimento.")}>Agendar meu atendimento <MessageCircle size={18}/></Button>
-          </div>
+        <div className="container narrow center"><span className="eyebrow">VOCÊ PODE COMEÇAR DO JEITO QUE ESTÁ</span>
+          <h2>Nem tudo precisa estar claro para você dar o primeiro passo. <em>Podemos começar pela escuta.</em></h2>
+          <p>Há momentos em que os sentimentos parecem difíceis de organizar ou colocar em palavras. A psicoterapia pode oferecer um espaço para olhar com atenção para o que você está vivendo, sem precisar ter respostas prontas.</p>
+          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o acompanhamento psicológico.")}>Quero saber mais <ArrowRight size={18}/></Button></div>
         </div>
       </section>
 
-      <section className="section soft" id="especialidades">
-        <div className="container issues-container">
-          <div className="section-heading center">
-            <span className="eyebrow">CUIDADO PARA DIFERENTES MOMENTOS</span>
-            <h2>Suas dores físicas e emocionais <em>merece ser compreendido.</em></h2>
-            <p>Cada pessoa chega com uma história única. Conheça algumas das questões que podem ser acolhidas no acompanhamento.</p>
-          </div>
-          <div className="issue-window"><div className="issue-track">
-            {[0, 1].map(copy => <div className="conveyor-group" aria-hidden={copy === 1 ? true : undefined} key={copy}>
-              {issues.map(([title,text], i) => <article className="issue-card" key={title}>
-                <img className="issue-image" src={issueImages[i]?.url} alt={title} loading="lazy" />
-                <div className="issue-body"><h3>{title}</h3><p>{text}</p></div>
-              </article>)}
-            </div>)}
-          </div></div>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Quero agendar meu atendimento.")}>Agendar meu atendimento <MessageCircle size={18}/></Button></div>
+      <section className="section soft" id="possibilidades"><div className="container issues-container">
+        <div className="section-heading center"><span className="eyebrow">O QUE PODEMOS CONVERSAR</span><h2>Um espaço para olhar com cuidado para <em>o que você está vivendo.</em></h2><p>Cada história é única. Estes são alguns temas que podem aparecer na busca por acompanhamento psicológico.</p></div>
+        <div className="issue-window"><div className="issue-track"><div className="conveyor-group">{concerns.map(([title, desc], i) => <article className="issue-card" key={title}><div className="issue-image issue-symbol"><span>{["♡","◌","⌘","✧","↗","☼"][i]}</span></div><div className="issue-body"><h3>{title}</h3><p>{desc}</p></div></article>)}</div><div className="conveyor-group" aria-hidden="true">{concerns.map(([title, desc], i) => <article className="issue-card" key={title}><div className="issue-image issue-symbol"><span>{["♡","◌","⌘","✧","↗","☼"][i]}</span></div><div className="issue-body"><h3>{title}</h3><p>{desc}</p></div></article>)}</div></div></div>
+        <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de conversar sobre atendimento psicológico.")}>Vamos conversar <MessageCircle size={18}/></Button></div>
+      </div></section>
+
+      <section className="section process situations-section" id="quando-procurar"><div className="container">
+        <div className="section-heading center"><span className="eyebrow">RESPEITE SEU MOMENTO</span><h2>Você não precisa esperar chegar ao limite para <em>cuidar de si.</em></h2><p>Procurar apoio pode ser uma maneira de compreender melhor suas experiências e encontrar espaço para o que merece atenção.</p></div>
+        <div className="steps situation-cards">{[
+          ["01","Quando tudo parece demais","A rotina, as responsabilidades e as preocupações podem ocupar espaço demais na sua vida."],
+          ["02","Quando as emoções confundem","Pode ser difícil entender o que você sente ou como expressar aquilo que está passando."],
+          ["03","Quando relações pesam","Conflitos e padrões nos relacionamentos podem despertar questões que merecem ser olhadas com cuidado."],
+          ["04","Quando você quer se conhecer","A terapia também pode ser um espaço de reflexão, autoconhecimento e desenvolvimento pessoal."]
+        ].map(([n,t,d]) => <article className="step" key={n}><div className="step-num">{n}</div><div><h3>{t}</h3><p>{d}</p></div></article>)}</div>
+        <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de consultar os horários disponíveis.")}>Consultar horários <ArrowRight size={18}/></Button></div>
+      </div></section>
+
+      <section className="section clinic-story"><div className="container clinic-story-grid"><div className="clinic-copy">
+        <span className="eyebrow">UM CUIDADO QUE RESPEITA SUA INDIVIDUALIDADE</span><h2>Você é mais do que aquilo que está difícil neste momento. <em>Sua história merece ser ouvida.</em></h2>
+        <p>A psicoterapia é um espaço de encontro e reflexão. É possível conversar sobre emoções, relações, dúvidas e acontecimentos que atravessam a vida, com respeito ao seu ritmo e à sua singularidade.</p>
+        <p>O processo é construído em diálogo. Não é preciso ter todas as respostas nem saber exatamente por onde começar: a primeira conversa pode ser justamente o início dessa descoberta.</p>
+        <div className="clinic-highlights">
+          <div className="clinic-highlight-card"><span className="clinic-highlight-icon"><ShieldCheck size={22}/></span><strong>Respeito</strong><p>Sua experiência é recebida sem julgamentos e com atenção à sua individualidade.</p></div>
+          <div className="clinic-highlight-card"><span className="clinic-highlight-icon"><HeartHandshake size={22}/></span><strong>Acolhimento</strong><p>Um espaço para conversar com tranquilidade e explorar o que faz sentido para você.</p></div>
+          <div className="clinic-highlight-card"><span className="clinic-highlight-icon"><Sparkles size={22}/></span><strong>Autoconhecimento</strong><p>Tempo para refletir sobre sentimentos, escolhas, relações e necessidades.</p></div>
         </div>
-      </section>
+        <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Quero saber como funciona o acompanhamento psicológico.")}>Conhecer o atendimento <ArrowRight size={18}/></Button>
+      </div></div></section>
 
-      <section className="section process situations-section" id="processo">
-        <div className="container">
-          <div className="section-heading center">
-            <span className="eyebrow">ISSO ACONTECE COM VOCÊ?</span>
-            <h2>Você sente que está na hora de olhar com mais carinho para <em>o que está vivendo?</em></h2>
-            <p>Às vezes, alguns sentimentos e situações se repetem e fica difícil entender tudo sozinho. Você não precisa ter as respostas prontas para começar uma conversa.</p>
-          </div>
-          <div className="steps situation-cards">
-            {[
-              ["01","Pensamentos que não desaceleram","Você sente a mente cheia, pensa demais ou tem dificuldade para encontrar um momento de tranquilidade."],
-              ["02","Emoções difíceis de organizar","Ansiedade, insegurança ou tristeza aparecem e você nem sempre sabe como lidar com o que sente."],
-              ["03","Relações que trazem desgaste","Algumas situações e padrões nos relacionamentos se repetem e você gostaria de compreendê-los melhor."],
-              ["04","Vontade de se entender melhor","Você quer se conhecer, reconhecer suas necessidades e encontrar novas formas de lidar com os desafios."]
-            ].map(([n,t,d]) => <article className="step" key={n}><div className="step-num">{n}</div><div><h3>{t}</h3><p>{d}</p></div></article>)}
-          </div>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Gostaria de conversar e consultar os horários disponíveis para atendimento.")}>Vamos conversar <MessageCircle size={18}/></Button></div>
+      <section className="section about" id="sobre"><div className="container about-grid">
+        <div className="about-photo about-photo-placeholder"><div className="about-placeholder-content"><UserRound size={44}/><strong>Andréa Silva</strong><span>Psicóloga • CRP 02/34229</span></div></div>
+        <div className="about-copy"><span className="eyebrow">PRAZER, SOU ANDRÉA</span><h2>Um encontro profissional com <em>escuta, ética e humanidade.</em></h2>
+          <p>Sou Andréa Silva, psicóloga, e este espaço foi pensado para apresentar meu trabalho e facilitar seu primeiro contato comigo.</p>
+          <p>Acredito na importância de uma escuta cuidadosa, que respeite a singularidade de cada pessoa e o momento de vida que ela atravessa. O acompanhamento é construído a partir do diálogo, com atenção à sua história e às questões que você deseja trazer para a terapia.</p>
+          <p>Para conhecer minha abordagem de trabalho, as possibilidades de atendimento e esclarecer dúvidas, entre em contato. Será um prazer orientar você sobre os próximos passos.</p>
+          <div className="about-points"><div><Check size={17}/> Psicóloga • CRP 02/34229</div><div><Check size={17}/> Atendimento presencial e online</div><div><Check size={17}/> Escuta individualizada</div></div>
+          <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de conhecer melhor seu trabalho.")}>Fale comigo <MessageCircle size={18}/></Button>
         </div>
-      </section>
+      </div></section>
 
-      <section className="section clinic-story">
-        <div className="container clinic-story-grid">
-          <div className="clinic-copy">
-            <span className="eyebrow">UM CUIDADO QUE RESPEITA SUA HISTÓRIA</span>
-            <h2>Um espaço para acolher o que você sente e olhar para si com <em>mais gentileza.</em></h2>
-            <p>Nem sempre conseguimos explicar tudo o que sentimos — e não é preciso chegar com respostas prontas. A proposta é oferecer uma escuta atenta, sem julgamentos, para que você possa falar sobre sua história, suas dúvidas e aquilo que está pesando neste momento.</p>
-            <p>A partir dessa conversa, vocês podem explorar as possibilidades de acompanhamento e entender qual modalidade combina melhor com suas necessidades. O cuidado é construído com respeito à sua individualidade, aos seus limites e ao seu tempo.</p>
-            
-            <div className="clinic-highlights">
-              <div className="clinic-highlight-card"><span className="clinic-highlight-icon"><ShieldCheck size={22}/></span><strong>Privacidade</strong><p>Um espaço individual, com respeito à sua história e discrição em cada conversa.</p></div>
-              <div className="clinic-highlight-card"><span className="clinic-highlight-icon"><HeartHandshake size={22}/></span><strong>Acolhimento</strong><p>Escuta atenta e respeitosa, sem julgamentos e sem pressa para encontrar palavras.</p></div>
-              <div className="clinic-highlight-card"><span className="clinic-highlight-icon"><Monitor size={22}/></span><strong>Flexibilidade</strong><p>Opções de atendimento online e presencial, conforme disponibilidade.</p></div>
-            </div>
-            <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Gostaria de agendar um atendimento.")}>Agendar atendimento <ArrowRight size={18}/></Button>
-          </div>
+      <section className="section method-section" id="como-funciona"><div className="container">
+        <div className="section-heading center"><span className="eyebrow">COMO FUNCIONA</span><h2>Um começo possível, <em>passo a passo.</em></h2><p>Você pode entrar em contato para entender como funciona o processo e decidir com tranquilidade se este é o momento de começar.</p></div>
+        <div className="method-cards">{steps.map(([n,title,desc])=><article key={n}><div className="method-icon"><span>{n}</span></div><span>{n}</span><h3>{title}</h3><p>{desc}</p></article>)}</div>
+        <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de iniciar uma conversa sobre atendimento psicológico.")}>Dar o primeiro passo <ArrowRight size={18}/></Button></div>
+      </div></section>
+
+      <section className="section specialty"><div className="container specialty-grid">
+        <div><span className="eyebrow">PRESENCIAL E ONLINE</span><h2>O cuidado pode começar com uma <em>conversa.</em></h2><p>Entre em contato para confirmar a modalidade, conhecer os detalhes do atendimento e consultar os horários disponíveis. A escolha deve considerar suas necessidades e as condições adequadas para o acompanhamento.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber sobre atendimento presencial e online.")}>Consultar modalidades <ArrowRight size={18}/></Button></div>
+        <div className="specialty-quote"><HeartHandshake size={32}/><p>“Respeitar seu tempo também faz parte do cuidado.”</p></div>
+      </div></section>
+
+      <section className="section video-section" id="consultorio"><div className="container video-grid">
+        <div className="video-copy"><span className="eyebrow">CONHEÇA O ESPAÇO</span><h2>Um ambiente pensado para receber você com <em>tranquilidade.</em></h2><p>Veja um pouco do consultório e conheça o espaço onde acontecem os atendimentos presenciais. O vídeo poderá ser atualizado com a gravação enviada pela Andréa.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o consultório e o atendimento presencial.")}>Informações sobre o consultório <ArrowRight size={18}/></Button></div>
+        <div className="clinic-video-frame">{clinicVideoUrl ? <iframe src={clinicVideoUrl} title="Vídeo do consultório de Andréa Silva" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen/> : <div className="video-placeholder"><span className="video-play"><Video size={34}/></span><strong>Vídeo do consultório</strong><p>Espaço reservado para inserir o vídeo da Andréa</p></div>}</div>
+      </div></section>
+
+      <section className="section reviews"><div className="container reviews-container">
+        <div className="section-heading center"><span className="eyebrow">UM ESPAÇO DE CONFIANÇA</span><h2>Seu processo é único. <em>Seu cuidado também.</em></h2><p>Não existe uma trajetória igual à outra. O acompanhamento é construído respeitando a individualidade, os limites e os objetivos de cada pessoa.</p></div>
+        <div className="review-window"><div className="review-track"><div className="conveyor-group"><article className="review-card"><div className="review-person"><div className="review-avatar"><ShieldCheck size={24}/></div><div className="review-person-info"><h3>Escuta respeitosa</h3><span>Um espaço sem julgamentos</span></div></div><p className="review-quote">A conversa acontece com respeito à sua história, à sua privacidade e ao seu tempo.</p></article><article className="review-card"><div className="review-person"><div className="review-avatar"><HeartHandshake size={24}/></div><div className="review-person-info"><h3>Acompanhamento individual</h3><span>Construído em diálogo</span></div></div><p className="review-quote">As necessidades e os objetivos são conversados de forma individualizada.</p></article><article className="review-card"><div className="review-person"><div className="review-avatar"><Brain size={24}/></div><div className="review-person-info"><h3>Autoconhecimento</h3><span>Tempo para refletir</span></div></div><p className="review-quote">Um convite para olhar para emoções, escolhas e relações com mais consciência.</p></article></div></div></div>
+        <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o atendimento psicológico.")}>Conversar com Andréa <MessageCircle size={18}/></Button></div>
+      </div></section>
+
+      <section className="section location" id="localizacao"><div className="container location-grid">
+        <figure className="location-map"><iframe title="Mapa do endereço de atendimento em Rio Formoso" src={clinicMapUrl} loading="lazy" allowFullScreen referrerPolicy="strict-origin-when-cross-origin"/></figure>
+        <div className="location-copy"><span className="eyebrow">ONDE ESTAMOS</span><h2>Encontre o formato de atendimento adequado à <em>sua rotina.</em></h2><p>O atendimento é realizado presencialmente em Rio Formoso e também na modalidade online. Fale com Andréa para confirmar os detalhes e os horários disponíveis.</p>
+          <div className="location-list location-cards"><div className="location-card"><span className="location-card-icon"><MapPin size={21}/></span><strong>Consultório</strong><p>Rua São José, 191A, Centro, Rio Formoso.</p></div><div className="location-card"><span className="location-card-icon"><Video size={21}/></span><strong>Atendimento online</strong><p>Consulte as condições e a disponibilidade pelo WhatsApp.</p></div><div className="location-card"><span className="location-card-icon"><Clock3 size={21}/></span><strong>Agendamento</strong><p>Entre em contato para consultar horários.</p></div></div>
+          <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de consultar endereço e horários de atendimento.")}>Consultar informações <ArrowRight size={18}/></Button>
         </div>
-      </section>
+      </div></section>
 
+      <section className="section faq" id="faq"><div className="container faq-grid">
+        <div className="faq-intro"><span className="eyebrow">DÚVIDAS FREQUENTES</span><h2>Vamos esclarecer suas <em>dúvidas?</em></h2><p>Se precisar de outras informações, entre em contato diretamente com Andréa.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Tenho algumas dúvidas sobre o atendimento psicológico.")}>Falar pelo WhatsApp <MessageCircle size={18}/></Button></div>
+        <div className="faq-list">{faq.map(([q,a],i)=><div className={`faq-item ${openFaq===i ? "open":""}`} key={q}><Button variant="sitePlain" size="site" aria-expanded={openFaq===i} onClick={() => setOpenFaq(openFaq===i ? null : i)}><span>{q}</span><ChevronDown size={18}/></Button>{openFaq===i && <p>{a}</p>}</div>)}</div>
+      </div></section>
 
-      <section className="section about" id="sobre">
-        <div className="container about-grid">
-          <div className="about-photo about-photo-placeholder"><div className="about-placeholder-content"><UserRound size={44}/><strong>Imagem da Natali</strong><span>Em breve</span></div></div>
-          <div className="about-copy">
-            <span className="eyebrow">QUEM É NATALI?</span>
-            <h2>Um cuidado que começa com <em>escuta, presença e acolhimento.</em></h2>
-            <p>Natali é psicanalista e terapeuta integrativa emocional. Seu trabalho reúne escuta individualizada e diferentes possibilidades de cuidado, incluindo terapias cognitivo-comportamentais e atendimento infantil TRG Kids.</p>
-            <p>Mais do que chegar com respostas prontas, você pode encontrar um espaço para conversar sobre sua história, compreender o que está vivendo e conhecer as abordagens disponíveis para o seu momento.</p>
-            <div className="about-points"><div><Check size={17}/> Atendimento individual</div><div><Check size={17}/> Online e presencial</div><div><Check size={17}/> Corpo e emoções: um olhar integrado</div></div>
-            <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Quero agendar uma conversa.")}>Agendar conversa <MessageCircle size={18}/></Button>
-          </div>
-        </div>
-      </section>
+      <section className="final-cta"><div className="container center"><span className="eyebrow">SEU PRIMEIRO PASSO PODE SER SIMPLES</span><h2>Você pode começar apenas <em>conversando.</em></h2><p>Entre em contato para conhecer o atendimento psicológico, esclarecer dúvidas e verificar os horários disponíveis.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}>Agendar com Andréa <ArrowRight size={19}/></Button></div></section>
 
-      <section className="section method-section">
-        <div className="container">
-          <div className="section-heading center"><span className="eyebrow">ABORDAGENS DE CUIDADO</span><h2>Conhecer suas necessidades pode abrir espaço para <em>novas escolhas.</em></h2><p>Psicanálise, terapia integrativa emocional e outras abordagens podem oferecer caminhos diferentes. A indicação e os objetivos devem ser conversados com a profissional.</p></div>
-          <div className="method-cards">
-            <article><div className="method-icon"><Brain size={21}/></div><span>01</span><h3>Compreender</h3><p>Olhar para o que você sente e identificar padrões que se repetem na sua vida.</p></article>
-            <article><div className="method-icon"><HeartHandshake size={21}/></div><span>02</span><h3>Acolher</h3><p>Ter um espaço seguro para falar sobre experiências difíceis com respeito à sua história.</p></article>
-            <article><div className="method-icon"><Sparkles size={21}/></div><span>03</span><h3>Reorganizar</h3><p>Construir novas perspectivas para lidar com emoções, relações e situações do cotidiano.</p></article>
-            <article><div className="method-icon"><ArrowRight size={21}/></div><span>04</span><h3>Avançar</h3><p>Levar mais consciência para suas escolhas, limites e próximos passos.</p></article>
-          </div>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Gostaria de agendar meu atendimento.")}>Agendar meu atendimento <MessageCircle size={18}/></Button></div>
-        </div>
-      </section>
-
-      <section className="section specialty">
-        <div className="container specialty-grid">
-          <div><span className="eyebrow">CUIDADO INTEGRATIVO</span><h2>Leitura Corporal e <em>Comportamental</em></h2><p>Dores físicas e emocionais podem impactar o dia a dia. A escuta ativa e o acompanhamento terapêutico podem ajudar a compreender o que você está vivendo e conversar sobre possibilidades de cuidado adequadas às suas necessidades.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Gostaria de agendar um atendimento e conversar sobre as abordagens disponíveis.")}>Agendar atendimento <ArrowRight size={18}/></Button></div>
-          <div className="specialty-quote"><Brain size={32}/><p>“Compreender seus padrões pode ser o começo de uma nova forma de se relacionar consigo mesmo.”</p></div>
-        </div>
-      </section>
-
-      <section className="section reviews">
-        <div className="container reviews-container">
-          <div className="section-heading center"><span className="eyebrow">AVALIAÇÕES</span><h2>Acolhimento que faz parte de <em>cada encontro.</em></h2><p>Cada experiência é pessoal. O atendimento é conduzido com respeito, privacidade e atenção às necessidades apresentadas.</p></div>
-          <div className="review-window"><div className="review-track">{[0,1].map(copy => <div className="conveyor-group" aria-hidden={copy === 1 ? true : undefined} key={copy}>{reviews.map(({name,text})=><article className="review-card" key={name}><div className="review-stars" aria-label="Estrelas decorativas de exemplo">{[0,1,2,3,4].map(star=><Star key={star} size={18}/>)}</div><p className="review-quote">“{text}”</p><div className="review-person"><div className="review-avatar"><UserRound size={24}/></div><div className="review-person-info"><h3>{name}</h3><span>Experiência de atendimento</span></div></div></article>)}</div>)}</div></div>
-          <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Quero conversar sobre um atendimento.")}>Agendar atendimento <MessageCircle size={18}/></Button></div>
-        </div>
-      </section>
-
-      <section className="section location">
-        <div className="container location-grid">
-          <figure className="location-map">
-            {clinicMapUrl ? <iframe title="Google Maps — clínica em atendimento online, presencial e domiciliar" src={clinicMapUrl} loading="lazy" allowFullScreen referrerPolicy="strict-origin-when-cross-origin"/> : <div className="location-map-pending"><MapPin size={36}/><p>Mapa temporariamente indisponível.</p></div>}
-            
-          </figure>
-          <div className="location-copy"><span className="eyebrow">ATENDIMENTO EM PORTO ALEGRE</span><h2>Encontre uma modalidade de cuidado que combine com <em>sua rotina.</em></h2><p>Natali realiza atendimentos online e consulta a disponibilidade para modalidades presencial e domiciliar em Porto Alegre e região. Entre em contato para confirmar o endereço, a área de atendimento e os horários.</p><div className="location-list location-cards">
-            <div className="location-card"><span className="location-card-icon"><MapPin size={21}/></span><strong>Atendimento presencial</strong><p>Consulte a disponibilidade e combine o local pelo WhatsApp.</p></div>
-            <div className="location-card"><span className="location-card-icon"><Video size={21}/></span><strong>Atendimento online</strong><p>Converse de onde estiver, com praticidade e privacidade.</p></div>
-            <div className="location-card"><span className="location-card-icon"><Clock3 size={21}/></span><strong>Agendamento</strong><p>Consulte os horários disponíveis e escolha o melhor para você.</p></div>
-          </div><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Gostaria de agendar um atendimento e consultar as modalidades disponíveis.")}>Agendar atendimento <ArrowRight size={18}/></Button></div>
-        </div>
-      </section>
-
-      <section className="section faq" id="faq">
-        <div className="container faq-grid">
-          <div className="faq-intro"><span className="eyebrow">PERGUNTAS FREQUENTES</span><h2>Talvez a sua dúvida esteja <em>aqui.</em></h2><p>Se ainda não encontrou a resposta que procura, fale diretamente com a Natali.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Gostaria de agendar um atendimento e tirar algumas dúvidas.")}>Agendar atendimento <MessageCircle size={18}/></Button></div>
-          <div className="faq-list">{faq.map(([q,a],i)=><div className={`faq-item ${openFaq===i ? "open":""}`} key={q}><Button variant="sitePlain" size="site" aria-expanded={openFaq===i} onClick={() => setOpenFaq(openFaq===i ? null : i)}><span>{q}</span><ChevronDown size={18}/></Button>{openFaq===i && <p>{a}</p>}</div>)}</div>
-        </div>
-      </section>
-
-      <section className="final-cta">
-        <div className="container center"><span className="eyebrow">SEU PROCESSO COMEÇA COM UMA CONVERSA</span><h2>Comece com uma conversa e descubra o que faz sentido para <em>você.</em></h2><p>Envie uma mensagem para tirar dúvidas sobre abordagens, modalidades e agendamento.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Gostaria de agendar meu primeiro atendimento.")}>Agendar atendimento com Natali <ArrowRight size={19}/></Button></div>
-      </section>
-
-      <footer><div className="container footer-grid"><div><img className="natali-logo footer-logo" src={logo.url} alt="Logomarca Natali — Psicanalista e Terapeuta" /><p>Psicanalista<br/>Terapeuta Integrativa Emocional • TCC • TRG Kids</p></div><div><strong>Atendimento</strong><span>Online, presencial e domiciliar</span><span>Consulte horários</span></div><div><strong>Contato</strong><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Natali! Gostaria de agendar um atendimento.")}><MessageCircle size={16}/> WhatsApp</Button><a href="#inicio"><Instagram size={16}/> Instagram</a></div></div><div className="footer-bottom">© {new Date().getFullYear()} Natali. Todos os direitos reservados.</div></footer>
-
-      <Button variant="whatsapp" size="site" onClick={() => goWhatsapp("Olá, Natali! Gostaria de agendar um atendimento.")} aria-label="Falar no WhatsApp"><img src={whatsappIcon.url} alt=""/></Button>
+      <footer><div className="container footer-grid"><div><div className="andrea-wordmark footer-wordmark"><span className="wordmark-symbol">Ψ</span><span>ANDRÉA SILVA<small>PSICÓLOGA • CRP 02/34229</small></span></div><p>Escuta, acolhimento e cuidado psicológico.<br/>Atendimento presencial e online.</p></div><div><strong>Atendimento</strong><span>Rua São José, 191A</span><span>Centro • Rio Formoso</span><span>Presencial e online</span></div><div><strong>Contato</strong><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento.")}><MessageCircle size={16}/> WhatsApp</Button><a href="#inicio">Voltar ao início <ArrowRight size={16}/></a></div></div><div className="footer-bottom">© {new Date().getFullYear()} Andréa Silva • Psicóloga • CRP 02/34229. Todos os direitos reservados.</div></footer>
+      <Button variant="whatsapp" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de informações sobre atendimento psicológico.")} aria-label="Falar com Andréa pelo WhatsApp"><MessageCircle size={24}/></Button>
     </main>
   );
 }
