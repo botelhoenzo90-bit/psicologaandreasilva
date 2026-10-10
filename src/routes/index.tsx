@@ -54,6 +54,7 @@ const steps = [
   ["01", "Primeiro contato", "Envie uma mensagem para tirar dúvidas e conhecer as opções de atendimento."],
   ["02", "Acolhimento e escuta", "Na sessão, você terá espaço para falar sobre o que motivou a busca por acompanhamento."],
   ["03", "Construção do processo", "Os objetivos e a frequência são conversados de forma individual, respeitando suas necessidades."],
+  ["04", "Acompanhamento", "O processo segue no seu ritmo, com espaço para reflexão, ajustes e desenvolvimento ao longo do caminho."],
 ];
 
 const faq = [
