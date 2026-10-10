@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { ArrowRight, Brain, Check, ChevronDown, Clock3, HeartHandshake, MapPin, MessageCircle, Monitor, ShieldCheck, UserRound, Video, Laptop, CalendarDays, Sparkles } from "lucide-react";
+import { ArrowRight, Brain, Check, ChevronDown, Clock3, Compass, Heart, HeartHandshake, Lightbulb, MapPin, MessageCircle, Monitor, ShieldCheck, UserRound, Video, Laptop, CalendarDays, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
@@ -18,6 +18,7 @@ export const Route = createFileRoute("/")({
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
