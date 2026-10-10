@@ -33,13 +33,22 @@ function goWhatsapp(message: string) {
 }
 
 const concerns = [
-  ["Ansiedade e preocupações", "Quando a mente não desacelera e as preocupações ocupam espaço demais, a terapia pode ajudar você a compreender o que sente e encontrar novas formas de lidar com o cotidiano."],
-  ["Autoconhecimento", "Olhar para sua história com curiosidade e acolhimento, reconhecendo necessidades, valores, limites e padrões que influenciam suas escolhas."],
-  ["Relacionamentos", "Compreender sentimentos e dinâmicas que surgem nos vínculos, refletindo sobre comunicação, limites e relações mais conscientes."],
-  ["Autoestima e identidade", "Investigar a forma como você se enxerga e construir uma relação consigo que tenha mais consciência, respeito e gentileza."],
-  ["Fases de mudança", "Atravessar decisões e transições com espaço para reconhecer dúvidas, emoções e possibilidades, sem exigir de si respostas imediatas."],
-  ["Sobrecarga emocional", "Dar nome ao que pesa, compreender suas necessidades e olhar para as experiências que têm exigido tanto de você."],
+  ["Ansiedade e preocupações", "Acolher o que inquieta e compreender seus sentimentos no dia a dia."],
+  ["Autoconhecimento", "Reconhecer sua história, seus valores e o que faz sentido para você."],
+  ["Relacionamentos", "Refletir sobre vínculos, comunicação e limites nas suas relações."],
+  ["Autoestima e identidade", "Construir um olhar mais gentil e respeitoso sobre quem você é."],
+  ["Fases de mudança", "Encontrar espaço para as dúvidas e emoções de novos momentos."],
+  ["Sobrecarga emocional", "Olhar para o que pesa e reconhecer suas necessidades de cuidado."],
+  ["Luto e perdas", "Acolher a saudade e os sentimentos que acompanham as despedidas."],
+  ["Medos e inseguranças", "Compreender o que assusta e como isso afeta suas escolhas."],
+  ["Estresse e rotina", "Refletir sobre as exigências do cotidiano e seus limites."],
+  ["Tristeza e desânimo", "Ter espaço para falar sobre os dias difíceis e o que você sente."],
+  ["Limites e autocuidado", "Reconhecer suas necessidades e respeitar seu próprio tempo."],
+  ["Conflitos familiares", "Conversar sobre convivência, expectativas e vínculos em família."],
 ];
+
+const concernIcons = [Brain, Sparkles, HeartHandshake, Heart, Compass, Lightbulb,
+  Heart, ShieldCheck, Clock3, HeartHandshake, Sparkles, UserRound];
 
 const steps = [
   ["01", "Primeiro contato", "Envie uma mensagem para tirar dúvidas e conhecer as opções de atendimento."],
@@ -83,8 +92,17 @@ function Index() {
 
       <section className="section soft" id="possibilidades"><div className="container issues-container">
         <div className="section-heading center"><span className="eyebrow">O QUE PODEMOS CONVERSAR</span><h2>Um espaço para olhar com cuidado para <em>o que você está vivendo.</em></h2><p>Cada história é única. Estes são alguns temas que podem aparecer na busca por acompanhamento psicológico.</p></div>
-        <div className="issue-window"><div className="issue-track"><div className="conveyor-group">{concerns.map(([title, desc], i) => <article className="issue-card" key={title}><div className="issue-body"><span className="issue-icon" aria-hidden="true">{[<Brain size={25}/>, <Sparkles size={25}/>, <HeartHandshake size={25}/>, <Heart size={25}/>, <Compass size={25}/>, <Lightbulb size={25}/>][i]}</span><h3>{title}</h3><p>{desc}</p></div></article>)}</div><div className="conveyor-group" aria-hidden="true">{concerns.map(([title, desc], i) => <article className="issue-card" key={title}><div className="issue-body"><span className="issue-icon" aria-hidden="true">{[<Brain size={25}/>, <Sparkles size={25}/>, <HeartHandshake size={25}/>, <Heart size={25}/>, <Compass size={25}/>, <Lightbulb size={25}/>][i]}</span><h3>{title}</h3><p>{desc}</p></div></article>)}</div></div></div>
+        <div className="issue-window"><div className="issue-track">{[0, 1].map((group) => <div className="conveyor-group" key={group} aria-hidden={group === 1 ? true : undefined}>{concerns.map(([title, desc], i) => {
+          const Icon = concernIcons[i] ?? Brain;
+          return <article className="issue-card" key={title}><div className="issue-body"><span className="issue-icon" aria-hidden="true"><Icon size={25}/></span><h3>{title}</h3><p>{desc}</p></div></article>;
+        })}</div>)}</div></div>
         <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de conversar sobre atendimento psicológico.")}>Vamos conversar <MessageCircle size={18}/></Button></div>
+      </div></section>
+
+      <section className="section video-section" id="consultorio"><div className="container video-grid">
+        <div className="video-copy"><span className="eyebrow">CONHEÇA O ESPAÇO</span><h2>Um ambiente pensado para receber você com <em>tranquilidade.</em></h2><p>Veja um pouco do consultório e conheça o espaço onde acontecem os atendimentos presenciais.</p></div>
+        <div className="clinic-video-frame vertical-video"><video controls playsInline preload="metadata" poster="/Emblema%20Dourado%20de%20Psicologia%20e%20Crescimento.png" aria-label="Vídeo do consultório de Andréa Silva"><source src={clinicVideoUrl} type="video/mp4" />Seu navegador não consegue reproduzir este vídeo. Verifique se o arquivo MP4 está disponível em public.</video></div>
+        <div className="video-cta"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o consultório e o atendimento presencial.")}>Informações sobre o consultório <ArrowRight size={18}/></Button></div>
       </div></section>
 
       <section className="section process situations-section" id="quando-procurar"><div className="container">
@@ -124,12 +142,6 @@ function Index() {
         <div className="section-heading center"><span className="eyebrow">COMO FUNCIONA</span><h2>Um começo possível, <em>passo a passo.</em></h2><p>Você pode entrar em contato para entender como funciona o processo e decidir com tranquilidade se este é o momento de começar.</p></div>
         <div className="method-cards">{steps.map(([n,title,desc])=><article key={n}><div className="method-icon"><span>{n}</span></div><span>{n}</span><h3>{title}</h3><p>{desc}</p></article>)}</div>
         <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de iniciar uma conversa sobre atendimento psicológico.")}>Dar o primeiro passo <ArrowRight size={18}/></Button></div>
-      </div></section>
-
-      <section className="section video-section" id="consultorio"><div className="container video-grid">
-        <div className="video-copy"><span className="eyebrow">CONHEÇA O ESPAÇO</span><h2>Um ambiente pensado para receber você com <em>tranquilidade.</em></h2><p>Veja um pouco do consultório e conheça o espaço onde acontecem os atendimentos presenciais.</p></div>
-        <div className="clinic-video-frame vertical-video"><video controls playsInline preload="metadata" poster="/Emblema%20Dourado%20de%20Psicologia%20e%20Crescimento.png" aria-label="Vídeo do consultório de Andréa Silva"><source src={clinicVideoUrl} type="video/mp4" />Seu navegador não consegue reproduzir este vídeo. Verifique se o arquivo MP4 está disponível em public.</video></div>
-        <div className="video-cta"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o consultório e o atendimento presencial.")}>Informações sobre o consultório <ArrowRight size={18}/></Button></div>
       </div></section>
 
       <section className="section reviews" id="avaliacoes"><div className="container reviews-container">
