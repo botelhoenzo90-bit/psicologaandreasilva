@@ -404,3 +404,16 @@ footer{background:var(--footer-surface);color:var(--footer-text);padding:44px 0 
 .andreia-site .about-photo-placeholder:has(.about-portrait-image:not([style*="display: none"])) .about-placeholder-content {
   display: none;
 }
+
+
+/* Carrossel de depoimentos em texto, com cards contínuos */
+.andreia-site .reviews .review-window { overflow: hidden !important; width: 100%; }
+.andreia-site .reviews .review-track { display: flex !important; width: max-content !important; animation: andreaLoop 28s linear infinite !important; }
+.andreia-site .reviews .review-window:hover .review-track { animation-play-state: running !important; }
+.andreia-site .reviews .review-card { width: min(360px, 82vw) !important; min-height: 285px; height: auto; padding: 28px 26px !important; border: 1px solid #d8c8a6 !important; border-radius: 22px; background: linear-gradient(145deg, #fffefa 0%, #f4f0e8 100%) !important; box-shadow: 0 12px 28px rgba(38, 32, 22, .08) !important; }
+.andreia-site .reviews .review-stars { color: #b48a3f; font-family: Georgia, serif; font-size: 52px; line-height: .9; margin-bottom: 12px; }
+.andreia-site .reviews .review-stars span { display: block; }
+.andreia-site .reviews .review-card .review-quote { flex: 1; display: flex; align-items: center; text-align: center; font-size: 14px; line-height: 1.8 !important; color: #514b40; overflow-wrap: anywhere; }
+.andreia-site .reviews .review-person { border-top: 1px solid #e2d9c8; padding-top: 18px; margin-top: 20px; }
+.andreia-site .reviews .review-avatar { background: #e9dfcb !important; color: #8e6a2f !important; }
+@media (max-width: 760px) { .andreia-site .reviews .review-card { min-height: 300px; padding: 24px 22px !important; } }
