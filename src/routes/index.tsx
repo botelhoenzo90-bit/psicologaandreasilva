@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { ArrowRight, Brain, Check, ChevronDown, Clock3, Compass, Heart, HeartHandshake, Lightbulb, MapPin, MessageCircle, Monitor, ShieldCheck, UserRound, Video, Laptop, CalendarDays, Sparkles } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import andreaLogoAsset from "@/assets/andrea-logo.png.asset.json";
 
 const whatsapp = "https://wa.me/5581988881202";
 const clinicMapUrl = "https://www.google.com/maps?q=Rua+Sao+Jose+191A+Rio+Formoso+PE&output=embed";
@@ -19,6 +20,9 @@ export const Route = createFileRoute("/")({
       { property: "og:locale", content: "pt_BR" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+      { property: "og:image", content: new URL(andreaLogoAsset.url, "https://psicologaandreasilva.lovable.app").href },
+      { property: "og:image:alt", content: "Logomarca de Andréa Silva, Psicóloga" },
+      { name: "twitter:image", content: new URL(andreaLogoAsset.url, "https://psicologaandreasilva.lovable.app").href },
     ],
   }),
   component: Index,
