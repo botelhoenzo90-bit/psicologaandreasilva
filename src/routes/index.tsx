@@ -28,12 +28,12 @@ function goWhatsapp(message: string) {
 }
 
 const concerns = [
-  ["Ansiedade e preocupações", "Um espaço para falar sobre pensamentos acelerados, inseguranças e desafios do dia a dia."],
-  ["Autoconhecimento", "Reconhecer sentimentos, necessidades, limites e padrões que fazem parte da sua história."],
-  ["Relacionamentos", "Refletir sobre vínculos, comunicação, conflitos e formas de se relacionar."],
-  ["Autoestima e identidade", "Explorar a maneira como você se percebe e fortalecer uma relação mais consciente consigo."],
-  ["Fases de mudança", "Acolher dúvidas e emoções que podem surgir em transições pessoais e profissionais."],
-  ["Sobrecarga emocional", "Encontrar espaço para nomear o que pesa e compreender melhor suas experiências."],
+  ["Ansiedade e preocupações", "Quando a mente não desacelera e as preocupações ocupam espaço demais, a terapia pode ajudar você a compreender o que sente e encontrar novas formas de lidar com o cotidiano."],
+  ["Autoconhecimento", "Olhar para sua história com curiosidade e acolhimento, reconhecendo necessidades, valores, limites e padrões que influenciam suas escolhas."],
+  ["Relacionamentos", "Compreender sentimentos e dinâmicas que surgem nos vínculos, refletindo sobre comunicação, limites e relações mais conscientes."],
+  ["Autoestima e identidade", "Investigar a forma como você se enxerga e construir uma relação consigo que tenha mais consciência, respeito e gentileza."],
+  ["Fases de mudança", "Atravessar decisões e transições com espaço para reconhecer dúvidas, emoções e possibilidades, sem exigir de si respostas imediatas."],
+  ["Sobrecarga emocional", "Dar nome ao que pesa, compreender suas necessidades e olhar para as experiências que têm exigido tanto de você."],
 ];
 
 const steps = [
@@ -63,7 +63,7 @@ function Index() {
             <span className="eyebrow">UM ESPAÇO DE ESCUTA E ACOLHIMENTO</span>
             <h1>Você não precisa dar conta de tudo <em>sozinha.</em></h1>
             <p className="hero-statement">Cuidar da saúde emocional também é uma forma de cuidar de você.</p>
-            <p className="hero-lead">Um espaço de escuta respeitosa para compreender o que você sente, olhar para sua história e construir novas possibilidades no seu tempo.</p>
+            <p className="hero-lead">Um acompanhamento psicológico que respeita sua história, acolhe suas emoções e oferece espaço para compreender o que você vive — sem pressa, sem julgamentos e no seu ritmo.</p>
             <div className="hero-credentials"><span><ShieldCheck size={17}/> Escuta com respeito e privacidade</span><span><Monitor size={17}/> Atendimento presencial e online</span></div>
             <div className="hero-actions hero-actions-centered"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de informações sobre o atendimento psicológico e horários disponíveis.")}><MessageCircle/> Agendar atendimento</Button></div>
             <p className="hero-note">Rio Formoso • Pernambuco</p>
@@ -76,14 +76,14 @@ function Index() {
       <section className="section intro-section">
         <div className="container narrow center"><span className="eyebrow">VOCÊ PODE COMEÇAR DO JEITO QUE ESTÁ</span>
           <h2>Nem tudo precisa estar claro para você dar o primeiro passo. <em>Podemos começar pela escuta.</em></h2>
-          <p>Há momentos em que os sentimentos parecem difíceis de organizar ou colocar em palavras. A psicoterapia pode oferecer um espaço para olhar com atenção para o que você está vivendo, sem precisar ter respostas prontas.</p>
+          <p>Nem sempre é fácil entender o que se passa por dentro ou encontrar palavras para explicar. A psicoterapia oferece um espaço de escuta para olhar com cuidado para suas emoções, relações e escolhas. Você não precisa chegar com tudo organizado: podemos começar pelo que está presente hoje.</p>
           <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de saber mais sobre o acompanhamento psicológico.")}>Quero saber mais <ArrowRight size={18}/></Button></div>
         </div>
       </section>
 
       <section className="section soft" id="possibilidades"><div className="container issues-container">
         <div className="section-heading center"><span className="eyebrow">O QUE PODEMOS CONVERSAR</span><h2>Um espaço para olhar com cuidado para <em>o que você está vivendo.</em></h2><p>Cada história é única. Estes são alguns temas que podem aparecer na busca por acompanhamento psicológico.</p></div>
-        <div className="issue-window"><div className="issue-track"><div className="conveyor-group">{concerns.map(([title, desc], i) => <article className="issue-card" key={title}><div className="issue-image issue-symbol"><span>{["♡","◌","⌘","✧","↗","☼"][i]}</span></div><div className="issue-body"><h3>{title}</h3><p>{desc}</p></div></article>)}</div><div className="conveyor-group" aria-hidden="true">{concerns.map(([title, desc], i) => <article className="issue-card" key={title}><div className="issue-image issue-symbol"><span>{["♡","◌","⌘","✧","↗","☼"][i]}</span></div><div className="issue-body"><h3>{title}</h3><p>{desc}</p></div></article>)}</div></div></div>
+        <div className="issue-window"><div className="issue-track"><div className="conveyor-group">{concerns.map(([title, desc], i) => <article className="issue-card" key={title}><div className="issue-image issue-photo"><img src={["https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=85"][i]} alt="" loading="lazy" /></div><div className="issue-body"><h3>{title}</h3><p>{desc}</p></div></article>)}</div><div className="conveyor-group" aria-hidden="true">{concerns.map(([title, desc], i) => <article className="issue-card" key={title}><div className="issue-image issue-photo"><img src={["https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1500534623283-312aade485b7?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=85","https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=900&q=85"][i]} alt="" loading="lazy" /></div><div className="issue-body"><h3>{title}</h3><p>{desc}</p></div></article>)}</div></div></div>
         <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de conversar sobre atendimento psicológico.")}>Vamos conversar <MessageCircle size={18}/></Button></div>
       </div></section>
 
@@ -100,7 +100,7 @@ function Index() {
 
       <section className="section clinic-story"><div className="container clinic-story-grid"><div className="clinic-copy">
         <span className="eyebrow">UM CUIDADO QUE RESPEITA SUA INDIVIDUALIDADE</span><h2>Você é mais do que aquilo que está difícil neste momento. <em>Sua história merece ser ouvida.</em></h2>
-        <p>A psicoterapia é um espaço de encontro e reflexão. É possível conversar sobre emoções, relações, dúvidas e acontecimentos que atravessam a vida, com respeito ao seu ritmo e à sua singularidade.</p>
+        <p>A psicoterapia pode ser um espaço para compreender emoções, rever padrões, reconhecer necessidades e refletir sobre relações e escolhas. Não se trata de receber respostas prontas, mas de construir entendimento com atenção à sua história e ao seu momento.</p>
         <p>O processo é construído em diálogo. Não é preciso ter todas as respostas nem saber exatamente por onde começar: a primeira conversa pode ser justamente o início dessa descoberta.</p>
         <div className="clinic-highlights">
           <div className="clinic-highlight-card"><span className="clinic-highlight-icon"><ShieldCheck size={22}/></span><strong>Respeito</strong><p>Sua experiência é recebida sem julgamentos e com atenção à sua individualidade.</p></div>
@@ -113,8 +113,8 @@ function Index() {
       <section className="section about" id="sobre"><div className="container about-grid">
         <div className="about-photo about-photo-placeholder"><div className="about-placeholder-content"><UserRound size={44}/><strong>Andréa Silva</strong><span>Psicóloga • CRP 02/34229</span></div></div>
         <div className="about-copy"><span className="eyebrow">PRAZER, SOU ANDRÉA</span><h2>Um encontro profissional com <em>escuta, ética e humanidade.</em></h2>
-          <p>Sou Andréa Silva, psicóloga, e este espaço foi pensado para apresentar meu trabalho e facilitar seu primeiro contato comigo.</p>
-          <p>Acredito na importância de uma escuta cuidadosa, que respeite a singularidade de cada pessoa e o momento de vida que ela atravessa. O acompanhamento é construído a partir do diálogo, com atenção à sua história e às questões que você deseja trazer para a terapia.</p>
+          <p>Sou Andréa Silva, psicóloga (CRP 02/34229). Este espaço foi criado para que você conheça meu trabalho e encontre um caminho simples para tirar dúvidas sobre o acompanhamento psicológico.</p>
+          <p>Acredito na importância de uma escuta atenta e ética, que reconheça a singularidade de cada pessoa. O processo terapêutico é construído em diálogo, respeitando sua história, seu contexto e as questões que fazem sentido para você.</p>
           <p>Para conhecer minha abordagem de trabalho, as possibilidades de atendimento e esclarecer dúvidas, entre em contato. Será um prazer orientar você sobre os próximos passos.</p>
           <div className="about-points"><div><Check size={17}/> Psicóloga • CRP 02/34229</div><div><Check size={17}/> Atendimento presencial e online</div><div><Check size={17}/> Escuta individualizada</div></div>
           <Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de conhecer melhor seu trabalho.")}>Fale comigo <MessageCircle size={18}/></Button>
@@ -156,7 +156,7 @@ function Index() {
         <div className="faq-list">{faq.map(([q,a],i)=><div className={`faq-item ${openFaq===i ? "open":""}`} key={q}><Button variant="sitePlain" size="site" aria-expanded={openFaq===i} onClick={() => setOpenFaq(openFaq===i ? null : i)}><span>{q}</span><ChevronDown size={18}/></Button>{openFaq===i && <p>{a}</p>}</div>)}</div>
       </div></section>
 
-      <section className="final-cta"><div className="container center"><span className="eyebrow">SEU PRIMEIRO PASSO PODE SER SIMPLES</span><h2>Você pode começar apenas <em>conversando.</em></h2><p>Entre em contato para conhecer o atendimento psicológico, esclarecer dúvidas e verificar os horários disponíveis.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}>Agendar com Andréa <ArrowRight size={19}/></Button></div></section>
+      <section className="final-cta"><div className="container center"><span className="eyebrow">SEU PRIMEIRO PASSO PODE SER SIMPLES</span><h2>Seu cuidado pode começar com uma <em>conversa.</em></h2><p>Entre em contato para conhecer o atendimento psicológico, esclarecer dúvidas e verificar os horários disponíveis.</p><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}>Agendar com Andréa <ArrowRight size={19}/></Button></div></section>
 
       <footer><div className="container footer-grid"><div><div className="andrea-wordmark footer-wordmark"><span className="wordmark-symbol">Ψ</span><span>ANDRÉA SILVA<small>PSICÓLOGA • CRP 02/34229</small></span></div><p>Escuta, acolhimento e cuidado psicológico.<br/>Atendimento presencial e online.</p></div><div><strong>Atendimento</strong><span>Rua São José, 191A</span><span>Centro • Rio Formoso</span><span>Presencial e online</span></div><div><strong>Contato</strong><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento.")}><MessageCircle size={16}/> WhatsApp</Button><a href="#inicio">Voltar ao início <ArrowRight size={16}/></a></div></div><div className="footer-bottom">© {new Date().getFullYear()} Andréa Silva • Psicóloga • CRP 02/34229. Todos os direitos reservados.</div></footer>
       <Button variant="whatsapp" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de informações sobre atendimento psicológico.")} aria-label="Falar com Andréa pelo WhatsApp"><MessageCircle size={24}/></Button>
