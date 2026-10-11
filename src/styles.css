@@ -981,3 +981,29 @@ footer{background:var(--footer-surface);color:var(--footer-text);padding:44px 0 
   .andreia-site .issue-card { width: 235px !important; height: 310px !important; }
   .andreia-site .andrea-main-photo { width: min(100%, 340px); }
 }
+
+
+/* Cards do carrossel: fotos maiores e enquadramento sem cortes agressivos */
+.andreia-site .issue-card {
+  height: 370px !important;
+}
+.andreia-site .issue-card > .issue-image {
+  height: 190px !important;
+  flex-basis: 190px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #f4eee4;
+}
+.andreia-site .issue-card .issue-body {
+  padding: 12px 16px 16px !important;
+  gap: 8px !important;
+}
+@media (max-width: 760px) {
+  .andreia-site .issue-card {
+    height: 365px !important;
+  }
+  .andreia-site .issue-card > .issue-image {
+    height: 185px !important;
+    flex-basis: 185px !important;
+  }
+}
