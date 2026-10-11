@@ -1007,3 +1007,9 @@ footer{background:var(--footer-surface);color:var(--footer-text);padding:44px 0 
     flex-basis: 185px !important;
   }
 }
+
+/* Fotos dos cards padronizadas em quadrado */
+.andreia-site .issue-card{height:auto!important;min-height:0!important;padding:0!important}
+.andreia-site .issue-card>.issue-image{display:block!important;width:100%!important;aspect-ratio:1/1!important;height:auto!important;flex:0 0 auto!important;object-fit:cover!important;object-position:center!important;background:#f4eee4}
+.andreia-site .issue-card .issue-body{flex:1 0 auto!important;padding:14px 16px 18px!important;gap:8px!important;justify-content:flex-start!important}
+@media(max-width:760px){.andreia-site .issue-card{width:235px!important;height:auto!important}.andreia-site .issue-card>.issue-image{aspect-ratio:1/1!important;height:auto!important;flex-basis:auto!important}}
