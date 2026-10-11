@@ -859,6 +859,39 @@ footer{background:var(--footer-surface);color:var(--footer-text);padding:44px 0 
 }
 
 
+.andreia-site .andrea-gallery {
+  order: 1;
+  width: min(100%, 440px);
+  min-width: 0;
+  margin-block: 8px 28px;
+}
+.andreia-site .andrea-gallery-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--paper);
+}
+.andreia-site .andrea-gallery-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.andreia-site .andrea-gallery .andrea-gallery-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  min-height: 0;
+  padding: 0;
+  border-radius: 50%;
+  z-index: 2;
+}
+.andreia-site .andrea-gallery .andrea-gallery-arrow:hover { transform: translateY(-50%); }
+.andreia-site .andrea-gallery-prev { left: 8px; }
+.andreia-site .andrea-gallery-next { right: 8px; }
+
 /* Centraliza a chamada introdutória de Como Funciona e exibe quatro cards no desktop */
 .andreia-site section:has(.method-cards) .section-heading {
   width: min(calc(100% - 40px), 820px) !important;

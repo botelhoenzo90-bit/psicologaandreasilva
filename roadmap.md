@@ -1,4 +1,5 @@
 ## Ajustes solicitados
+- [x] Adicionar as cinco fotos enviadas à seção sobre Andréa, preservando o retrato atual em um carrossel.
 - [x] Corrigir o endereço do vídeo do consultório usando o arquivo existente e hospedagem de mídia estável.
 - [x] Compactar os cards de temas em quadrados, ampliar os temas e mover o vídeo para logo abaixo do carrossel.
 - [x] Aplicar a logomarca enviada da Natali ao favicon e à imagem de compartilhamento.
