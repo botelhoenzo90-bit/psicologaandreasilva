@@ -22,7 +22,7 @@ const andreaPhotos = [
 
 const whatsapp = "https://wa.me/5581988881202";
 const clinicMapUrl = "https://www.google.com/maps?q=Rua+Sao+Jose+191A+Rio+Formoso+PE&output=embed";
-const clinicVideoUrl = "/1011(1)%20(1).mp4?v=3";
+const clinicVideoUrl = "https://raw.githubusercontent.com/botelhoenzo90-bit/psicologaandreasilva/main/public/1011%281%29%20%281%29.mp4";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
@@ -118,7 +118,7 @@ function Index() {
 
       <section className="section video-section" id="consultorio"><div className="container video-grid">
         <div className="video-copy"><span className="eyebrow">CONHEÇA O ESPAÇO</span><h2>Um ambiente pensado para receber você com <em>tranquilidade.</em></h2><p>Veja um pouco do consultório e conheça o espaço onde acontecem os atendimentos presenciais.</p></div>
-        <div className="clinic-video-frame vertical-video"><video controls playsInline preload="metadata" poster="/Emblema%20Dourado%20de%20Psicologia%20e%20Crescimento.png" aria-label="Vídeo do consultório de Andréa Silva"><source src={clinicVideoUrl} type="video/mp4" />Seu navegador não consegue reproduzir este vídeo.</video></div>
+        <div className="clinic-video-frame vertical-video"><video controls playsInline preload="auto" poster="/Emblema%20Dourado%20de%20Psicologia%20e%20Crescimento.png" aria-label="Vídeo do consultório de Andréa Silva"><source src={clinicVideoUrl} type="video/mp4" />Seu navegador não consegue reproduzir este vídeo.</video></div>
         <div className="video-cta"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento presencial ou online.")}>Informações sobre o consultório <ArrowRight size={18}/></Button></div>
       </div></section>
 
