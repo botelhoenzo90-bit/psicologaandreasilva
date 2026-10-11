@@ -923,3 +923,61 @@ footer{background:var(--footer-surface);color:var(--footer-text);padding:44px 0 
     grid-template-columns: 1fr !important;
   }
 }
+
+
+/* Fotos de Andréa no carrossel de temas; retrato principal quadrado sem carrossel */
+.andreia-site .issue-card {
+  height: 310px !important;
+  aspect-ratio: auto !important;
+  padding: 0 !important;
+}
+.andreia-site .issue-card > .issue-image {
+  display: block;
+  width: 100%;
+  height: 112px !important;
+  flex: 0 0 112px;
+  object-fit: cover;
+  object-position: center 32%;
+}
+.andreia-site .issue-card .issue-body {
+  padding: 12px 15px 15px !important;
+  gap: 7px !important;
+  justify-content: flex-start !important;
+}
+.andreia-site .issue-card .issue-icon {
+  width: 32px;
+  height: 32px;
+  flex-basis: 32px;
+  border-radius: 10px;
+}
+.andreia-site .issue-card .issue-icon svg { width: 17px; height: 17px; }
+.andreia-site .issue-card .issue-body h3 {
+  min-height: 0 !important;
+  font-size: 16px !important;
+  margin: 0 !important;
+}
+.andreia-site .issue-card .issue-body p {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+}
+.andreia-site .andrea-main-photo {
+  display: block;
+  width: min(100%, 420px);
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  margin: 8px auto 26px !important;
+  overflow: hidden;
+  border-radius: 22px;
+  background: var(--paper);
+}
+.andreia-site .andrea-main-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+}
+@media (max-width: 760px) {
+  .andreia-site .issue-card { width: 235px !important; height: 310px !important; }
+  .andreia-site .andrea-main-photo { width: min(100%, 340px); }
+}
