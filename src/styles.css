@@ -1016,3 +1016,7 @@ footer{background:var(--footer-surface);color:var(--footer-text);padding:44px 0 
 
 /* Sobrecarga emocional: enquadramento um pouco mais alto para não cortar o topo da cabeça */
 .andreia-site .issue-card:nth-child(6) > .issue-image { object-position: center top !important; }
+
+/* Limites e autocuidado e Conflitos familiares: baixar o enquadramento das fotos */
+.andreia-site .issue-card:nth-child(11) > .issue-image,
+.andreia-site .issue-card:nth-child(12) > .issue-image { object-position: center top !important; }
