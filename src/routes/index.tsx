@@ -9,7 +9,6 @@ import andreaFoto3 from "@/assets/andrea-foto-3.png.asset.json";
 import andreaFoto4 from "@/assets/andrea-foto-4.png.asset.json";
 import andreaFoto5 from "@/assets/andrea-foto-5.png.asset.json";
 import andreaFoto6 from "@/assets/andrea-foto-6.png.asset.json";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
 
 const andreaPhotos = [
   { url: "/download.png", alt: "Retrato da psicóloga Andréa Silva" },
@@ -22,7 +21,7 @@ const andreaPhotos = [
 
 const whatsapp = "https://wa.me/5581988881202";
 const clinicMapUrl = "https://www.google.com/maps?q=Rua+Sao+Jose+191A+Rio+Formoso+PE&output=embed";
-const clinicVideoUrl = "https://raw.githubusercontent.com/botelhoenzo90-bit/psicologaandreasilva/main/public/1011%281%29%20%281%29.mp4";
+const clinicVideoUrl = "https://raw.githubusercontent.com/botelhoenzo90-bit/psicologaandreasilva/main/public/teste%2010%20(1).mp4";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
@@ -111,7 +110,8 @@ function Index() {
         <div className="section-heading center"><span className="eyebrow">O QUE PODEMOS CONVERSAR</span><h2>Um espaço para olhar com cuidado para <em>o que você está vivendo.</em></h2><p>Cada história é única. Estes são alguns temas que podem aparecer na busca por acompanhamento psicológico.</p></div>
         <div className="issue-window"><div className="issue-track">{[0, 1].map((group) => <div className="conveyor-group" key={group} aria-hidden={group === 1 ? true : undefined}>{concerns.map(([title, desc], i) => {
           const Icon = concernIcons[i] ?? Brain;
-          return <article className="issue-card" key={title}><div className="issue-body"><span className="issue-icon" aria-hidden="true"><Icon size={25}/></span><h3>{title}</h3><p>{desc}</p></div></article>;
+          const photo = andreaPhotos[i % andreaPhotos.length];
+          return <article className="issue-card" key={title}><img className="issue-image" src={photo.url} alt={photo.alt} loading="lazy" /><div className="issue-body"><span className="issue-icon" aria-hidden="true"><Icon size={25}/></span><h3>{title}</h3><p>{desc}</p></div></article>;
         })}</div>)}</div></div>
         <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico.")}>Vamos conversar <MessageCircle size={18}/></Button></div>
       </div></section>
@@ -147,15 +147,7 @@ function Index() {
 
       <section className="section about" id="sobre"><div className="container about-grid">
         <div className="about-copy"><span className="eyebrow">PRAZER, SOU ANDRÉA</span><h2>Um encontro profissional com <em>escuta, ética e humanidade.</em></h2>
-          <Carousel className="andrea-gallery" opts={{ loop: true }} aria-label="Fotos de Andréa Silva" tabIndex={0}>
-            <CarouselContent>{andreaPhotos.map((photo, index) => (
-              <CarouselItem key={photo.url} aria-label={`Foto ${index + 1} de ${andreaPhotos.length}`}>
-                <figure className="andrea-gallery-photo"><img src={photo.url} alt={photo.alt} loading="lazy" width={768} height={1024}/></figure>
-              </CarouselItem>
-            ))}</CarouselContent>
-            <CarouselPrevious variant="siteGold" className="andrea-gallery-arrow andrea-gallery-prev" aria-label="Foto anterior" title="Foto anterior"/>
-            <CarouselNext variant="siteGold" className="andrea-gallery-arrow andrea-gallery-next" aria-label="Próxima foto" title="Próxima foto"/>
-          </Carousel>
+          <figure className="andrea-gallery-photo andrea-main-photo"><img src="/download.png" alt="Andréa Silva, psicóloga" loading="lazy" width={768} height={768}/></figure>
           <p>Sou Andréa Silva, psicóloga (CRP 02/34229). Este espaço foi criado para que você conheça meu trabalho e encontre um caminho simples para tirar dúvidas sobre o acompanhamento psicológico.</p>
           <p>Acredito na importância de uma escuta atenta e ética, que reconheça a singularidade de cada pessoa. O processo terapêutico é construído em diálogo, respeitando sua história, seu contexto e as questões que fazem sentido para você.</p>
           <p>Para conhecer minha abordagem de trabalho, as possibilidades de atendimento e esclarecer dúvidas, entre em contato. Será um prazer orientar você sobre os próximos passos.</p>
