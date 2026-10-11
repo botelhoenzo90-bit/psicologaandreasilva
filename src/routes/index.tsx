@@ -22,7 +22,7 @@ const andreaPhotos = [
 
 const whatsapp = "https://wa.me/5581988881202";
 const clinicMapUrl = "https://www.google.com/maps?q=Rua+Sao+Jose+191A+Rio+Formoso+PE&output=embed";
-const clinicVideoUrl = "/1011%20%281%29.mp4?v=1";
+const clinicVideoUrl = "/1011%281%29%20%281%29.mp4?v=2";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
