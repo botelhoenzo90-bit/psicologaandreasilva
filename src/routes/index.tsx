@@ -7,7 +7,7 @@ import clinicVideoAsset from "@/assets/andrea-consultorio.mp4.asset.json";
 
 const whatsapp = "https://wa.me/5581988881202";
 const clinicMapUrl = "https://www.google.com/maps?q=Rua+Sao+Jose+191A+Rio+Formoso+PE&output=embed";
-const clinicVideoUrl = clinicVideoAsset.url;
+const clinicVideoUrl = "/1011%20%281%29.mp4?v=1";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
