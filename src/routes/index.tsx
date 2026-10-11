@@ -4,6 +4,21 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import andreaLogoAsset from "@/assets/andrea-logo.png.asset.json";
 import clinicVideoAsset from "@/assets/andrea-consultorio.mp4.asset.json";
+import andreaFoto2 from "@/assets/andrea-foto-2.png.asset.json";
+import andreaFoto3 from "@/assets/andrea-foto-3.png.asset.json";
+import andreaFoto4 from "@/assets/andrea-foto-4.png.asset.json";
+import andreaFoto5 from "@/assets/andrea-foto-5.png.asset.json";
+import andreaFoto6 from "@/assets/andrea-foto-6.png.asset.json";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+
+const andreaPhotos = [
+  { url: "/download.png", alt: "Retrato da psicóloga Andréa Silva" },
+  { url: andreaFoto2.url, alt: "Andréa Silva sentada no consultório" },
+  { url: andreaFoto3.url, alt: "Andréa Silva ao lado do sofá do consultório" },
+  { url: andreaFoto4.url, alt: "Andréa Silva em seu espaço de atendimento" },
+  { url: andreaFoto5.url, alt: "Andréa Silva em pé no consultório" },
+  { url: andreaFoto6.url, alt: "Andréa Silva no ambiente de atendimento presencial" },
+];
 
 const whatsapp = "https://wa.me/5581988881202";
 const clinicMapUrl = "https://www.google.com/maps?q=Rua+Sao+Jose+191A+Rio+Formoso+PE&output=embed";
@@ -131,7 +146,16 @@ function Index() {
       </div></div></section>
 
       <section className="section about" id="sobre"><div className="container about-grid">
-        <div className="about-copy"><span className="eyebrow">PRAZER, SOU ANDRÉA</span><h2>Um encontro profissional com <em>escuta, ética e humanidade.</em></h2><div className="about-photo about-photo-placeholder"><img className="about-portrait-image" src="/download.png" alt="Retrato da psicóloga Andréa Silva" onError={(event) => { event.currentTarget.style.display = "none"; }} /><div className="about-placeholder-content"><UserRound size={44}/><strong>Andréa Silva</strong><span>Psicóloga • CRP 02/34229</span></div></div>
+        <div className="about-copy"><span className="eyebrow">PRAZER, SOU ANDRÉA</span><h2>Um encontro profissional com <em>escuta, ética e humanidade.</em></h2>
+          <Carousel className="andrea-gallery" opts={{ loop: true }} aria-label="Fotos de Andréa Silva" tabIndex={0}>
+            <CarouselContent>{andreaPhotos.map((photo, index) => (
+              <CarouselItem key={photo.url} aria-label={`Foto ${index + 1} de ${andreaPhotos.length}`}>
+                <figure className="andrea-gallery-photo"><img src={photo.url} alt={photo.alt} loading="lazy" width={768} height={1024}/></figure>
+              </CarouselItem>
+            ))}</CarouselContent>
+            <CarouselPrevious variant="siteGold" className="andrea-gallery-arrow andrea-gallery-prev" aria-label="Foto anterior" title="Foto anterior"/>
+            <CarouselNext variant="siteGold" className="andrea-gallery-arrow andrea-gallery-next" aria-label="Próxima foto" title="Próxima foto"/>
+          </Carousel>
           <p>Sou Andréa Silva, psicóloga (CRP 02/34229). Este espaço foi criado para que você conheça meu trabalho e encontre um caminho simples para tirar dúvidas sobre o acompanhamento psicológico.</p>
           <p>Acredito na importância de uma escuta atenta e ética, que reconheça a singularidade de cada pessoa. O processo terapêutico é construído em diálogo, respeitando sua história, seu contexto e as questões que fazem sentido para você.</p>
           <p>Para conhecer minha abordagem de trabalho, as possibilidades de atendimento e esclarecer dúvidas, entre em contato. Será um prazer orientar você sobre os próximos passos.</p>
