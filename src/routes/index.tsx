@@ -21,7 +21,7 @@ const andreaPhotos = [
 
 const whatsapp = "https://wa.me/5581988881202";
 const clinicMapUrl = "https://www.google.com/maps?q=Rua+Sao+Jose+191A+Rio+Formoso+PE&output=embed";
-const clinicVideoUrl = "https://raw.githubusercontent.com/botelhoenzo90-bit/psicologaandreasilva/main/public/teste%2010%20(1).mp4";
+const clinicVideoUrl = "https://raw.githubusercontent.com/botelhoenzo90-bit/psicologaandreasilva/main/public/Video%20atualizado%20Andr%C3%A9a%20(1).mp4";
 
 export const Route = createFileRoute("/")({
   staticData: { sitemap: true },
@@ -127,8 +127,7 @@ function Index() {
         <div className="steps situation-cards">{[
           ["01","Quando tudo parece demais","A rotina, as responsabilidades e as preocupações podem ocupar espaço demais na sua vida."],
           ["02","Quando as emoções confundem","Pode ser difícil entender o que você sente ou como expressar aquilo que está passando."],
-          ["03","Quando relações pesam","Conflitos e padrões nos relacionamentos podem despertar questões que merecem ser olhadas com cuidado."],
-          ["04","Quando você quer se conhecer","A terapia também pode ser um espaço de reflexão, autoconhecimento e desenvolvimento pessoal."]
+          ["03","Quando relações pesam","Conflitos e padrões nos relacionamentos podem despertar questões que merecem ser olhadas com cuidado."],          ["04","Quando você quer se conhecer","A terapia também pode ser um espaço de reflexão, autoconhecimento e desenvolvimento pessoal."]
         ].map(([n,t,d]) => <article className="step" key={n}><div className="step-num">{n}</div><div><h3>{t}</h3><p>{d}</p></div></article>)}</div>
         <div className="center action"><Button variant="siteGold" size="site" onClick={() => goWhatsapp("Olá, Andréa! Gostaria de agendar um atendimento psicológico e consultar os horários disponíveis.")}>Consultar horários <ArrowRight size={18}/></Button></div>
       </div></section>
