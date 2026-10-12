@@ -13,6 +13,7 @@ export const Route=createRootRouteWithContext<{queryClient:QueryClient}>()({
  head:()=>({meta:[
   {charSet:"utf-8"},{name:"viewport",content:"width=device-width, initial-scale=1"},
   {name:"author",content:"Idalécia da Guia"},
+  {name:"google-site-verification",content:"9myn0HdI7aGpUZnVvPyhIOqrxVOLgTJA9XtYO1VNmew"},
   {property:"og:site_name",content:"Idalécia da Guia — Terapeuta TRG"}
  ],links:[{rel:"stylesheet",href:appCss},{rel:"icon",href:"/favicon.png?v=andrea-logo",type:"image/png"}]}),
  shellComponent:RootShell,component:RootComponent,notFoundComponent:NotFoundComponent,errorComponent:ErrorComponent
